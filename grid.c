@@ -24,6 +24,7 @@ void init_level(const char* file_path){
 		int current_column = 0;
 		while(*buffer && *buffer != '\n'){
 			current_column += 1;
+			buffer += 1;
 		}		
 		current_row += 1;
 	}
