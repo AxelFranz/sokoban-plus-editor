@@ -1,0 +1,22 @@
+\hypertarget{grid_8h_source}{}\doxysection{grid.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GRID\_HEADER}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GRID\_HEADER}}
+\DoxyCodeLine{3 \textcolor{keyword}{enum} CaseType\{}
+\DoxyCodeLine{4     WALL = \textcolor{charliteral}{'\#'},}
+\DoxyCodeLine{5     BOX = \textcolor{charliteral}{'\$'},}
+\DoxyCodeLine{6     PLAYER = \textcolor{charliteral}{'@'},}
+\DoxyCodeLine{7     GOAL = \textcolor{charliteral}{'.'},}
+\DoxyCodeLine{8     NONE = \textcolor{charliteral}{' '}}
+\DoxyCodeLine{9 \};}
+\DoxyCodeLine{15 \textcolor{keyword}{struct }\mbox{\hyperlink{structGrid}{Grid}}\{}
+\DoxyCodeLine{16     \textcolor{keyword}{enum} CaseType** \mbox{\hyperlink{structGrid_a05d18c31f25c3852511b052548d731e0}{game\_grid}}; }
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} \mbox{\hyperlink{structGrid_a3b0f8e63e5219988a543fccc0fbea01c}{column\_number}}; }
+\DoxyCodeLine{18     \textcolor{keywordtype}{int} \mbox{\hyperlink{structGrid_a45487e6ca04400fda42d64e3961e39ae}{row\_number}}; }
+\DoxyCodeLine{19 \};}
+\DoxyCodeLine{20 \textcolor{keywordtype}{void} init\_level(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* file\_path);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
