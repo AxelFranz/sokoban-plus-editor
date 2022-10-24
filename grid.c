@@ -31,3 +31,5 @@ void init_level(const char* file_path){
 	// fermeture du fichier
 	fclose(file);
 }
+ 
+

@@ -2,13 +2,13 @@ CFLAGS+= -Wall -Wextra
 LDFLAGS+= -lm
 
 main: main.o grid.o
-	gcc -o main main.o grid.o $(CFLAGS) $(LDFLAGS)
+	gcc -o $@ $^ $(CFLAGS) $(LDFLAGS)
 
-main.o: main.c grid.h
-	gcc -o main.o main.c $(CFLAGS) $(LDFLAGS)
+%.o : %.c 
+	gcc -c $< -o $@
 
-grid.o: grid.c grid.h
-	gcc -o grid.o grid.c $(CFLAGS) $(LDFLAGS)
+main.c: grid.h
+grid.c: grid.h
 
 clean: 
-	rm %.o
+	rm $(wildcard *.o)
