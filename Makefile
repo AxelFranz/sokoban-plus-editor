@@ -7,8 +7,13 @@ main: main.o grid.o
 %.o : %.c 
 	gcc -c $< -o $@
 
-main.c: grid.h
-grid.c: grid.h
+%.c: grid.h
 
 clean: 
-	rm $(wildcard *.o)
+	rm -rf $(wildcard *.o) html/ main vgcore.*
+
+doc:
+	doxygen
+
+archive:
+	tar -cf FRANZ_Axel.tar.gz *.h *.c Makefile level?.txt README.md Doxyfile 
