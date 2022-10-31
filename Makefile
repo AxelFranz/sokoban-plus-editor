@@ -10,7 +10,7 @@ main: main.o grid.o
 %.c: grid.h
 
 clean: 
-	rm -rf $(wildcard *.o) html/ main vgcore.*
+	rm -rf $(wildcard *.o) html/ main vgcore.* FRA*
 
 doc:
 	doxygen

@@ -7,8 +7,8 @@ int main(void){
 	*/	
 	bool run = true;
 	struct Grid a = init_level("level1.txt");
-	fprintf(stdout,"%d",a.column_number);
-	/*while(run){
+	display(&a);
+	while(run){
 		char entry = fgetc(stdin);
 		switch(entry){
 			case 'q' :{
@@ -16,6 +16,6 @@ int main(void){
 				break;
 			}
 		}
-	}*/
+	}
 }
 
