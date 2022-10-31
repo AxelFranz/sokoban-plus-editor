@@ -11,9 +11,6 @@
  * @brief Fonction main qui lance le jeu
  */
 int main(void){
-	/*
-	 * Test
-	*/	
 	bool run = true;
 	Grid a = init_level("level1.txt");
 	display(&a);

@@ -21,7 +21,8 @@ enum CaseType{
 typedef struct Grid{
 	enum CaseType** game_grid; ///< Tableau contenant les entités présents dans le jeu
 	int column_number; ///< Nombre de colonne de game_grid
-	int row_number; ///< Nomber de ligne de game_grid
+	int row_number; ///< Nombre de ligne de game_grid
+    int goal_number; ///< Nombre d'endrokts où mettre les caisses
 }Grid;
 
 

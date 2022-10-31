@@ -1,19 +1,24 @@
-CFLAGS+= -Wall -Wextra
-LDFLAGS+= -lm
+CFLAGS= -Wall -Wextra
+INCFLAGS= -I include
+OBJPATH=obj/
+vpath %.c src/
+vpath %.h include/
 
-main: main.o grid.o
-	gcc -o $@ $^ $(CFLAGS) $(LDFLAGS)
 
-%.o : %.c 
-	gcc -c $< -o $@
+main: $(addprefix $(OBJPATH),main.o grid.o)
+	gcc $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
-%.c: grid.h
+$(OBJPATH)%.o : %.c $(OBJPATH) 
+	gcc $(CFLAGS) $(INCFLAGS) -c -o $@ $<
+
+$(OBJPATH):
+	mkdir $@
 
 clean: 
-	rm -rf $(wildcard *.o) html/ main vgcore.* FRA*
+	rm -rf doc main vgcore.* FRA* $(OBJPATH)
 
 doc:
 	doxygen
 
 archive:
-	tar -cf FRANZ_Axel.tar.gz *.h *.c Makefile level?.txt README.md Doxyfile 
+	tar -cf FRANZ_Axel.tar.gz include/ src/ Makefile README.md Doxyfile 

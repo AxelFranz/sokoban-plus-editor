@@ -20,13 +20,13 @@ Grid init_level(const char* file_path){
 	int number_column = 0; // nombre de colonne
 	int number_row = 0; // nombre de ligne
 	int number_goals = 0;
-	// on lit la première ligne du fichier
+	//on lit la première ligne du fichier
 	fgets(line, 100, file);
 	sscanf(line, "%d %d %d", &number_column, &number_row, &number_goals);
 	int current_row = 0;
-	int current_goal = 0;
 	a_r.row_number = number_row;
 	a_r.column_number = number_column;
+	a_r.goal_number = number_goals;
 
 	a_r.game_grid =malloc((number_row)*sizeof(enum CaseType*));  
 	if (a_r.game_grid == NULL) exit(1);
