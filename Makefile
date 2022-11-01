@@ -5,7 +5,7 @@ vpath %.c src/
 vpath %.h include/
 
 
-main: $(addprefix $(OBJPATH),main.o grid.o)
+main: $(addprefix $(OBJPATH),main.o grid.o player.o)
 	gcc $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 $(OBJPATH)%.o : %.c $(OBJPATH) 

@@ -4,9 +4,14 @@
  * @author Axel FRANZ
  */
 
+#include "player.h"
 #include "grid.h"
 #include <stdlib.h>
 #include <stdio.h>
+
+void setCell(Grid* a,int i ,int j, char val){
+	a->game_grid[i][j]=val;
+}
 
 Grid init_level(const char* file_path){
 	// ouverture du fichier en mode lecture
@@ -27,7 +32,6 @@ Grid init_level(const char* file_path){
 	a_r.row_number = number_row;
 	a_r.column_number = number_column;
 	a_r.goal_number = number_goals;
-
 	a_r.game_grid =malloc((number_row)*sizeof(enum CaseType*));  
 	if (a_r.game_grid == NULL) exit(1);
 
@@ -40,7 +44,11 @@ Grid init_level(const char* file_path){
 		char* buffer = line;
 		int current_column = 0;
 		while(*buffer && *buffer != '\n'){
-			a_r.game_grid[current_row][current_column]=*buffer;
+			setCell(&a_r,current_row,current_column,*buffer);
+			if((*buffer)=='@'){
+				a_r.player.x = current_column;
+				a_r.player.y = current_row;
+			}
 			current_column += 1;			
 			buffer += 1;			
 		}	
@@ -53,6 +61,12 @@ Grid init_level(const char* file_path){
 }
 
 void display(Grid* g){
+	#ifdef _WIN32
+		char clear[]="cls";
+	#else
+		char clear[]="clear";
+	#endif
+	system(clear);
 	for(int i =0;i < g->row_number;i++){
 		for(int j = 0; j < g->column_number;j++){
 			fprintf(stdout,"%c",g->game_grid[i][j]);
