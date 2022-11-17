@@ -12,4 +12,6 @@ Liste des règles makefile :
 	* clean : Permet de supprimer tous les fichiers indésirables
 ```
 
-J'ai du déplacer la structure Player dans grid.h pour éviter les conflits de récursivité lors des include
+Fait et compilé avec GCC 12.2.0
+
+Le makefile + code est fait pour pouvoir être compilé sous windows ou linux sans interaction demandée de l'utilisateur autre que le `make`.

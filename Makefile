@@ -21,4 +21,4 @@ doc:
 	doxygen
 
 archive:
-	tar -cf FRANZ_Axel.tar.gz include/ src/ Makefile README.md Doxyfile 
+	tar -cf FRANZ_Axel.tar.gz include/ src/ Makefile README.md Doxyfile level?.txt

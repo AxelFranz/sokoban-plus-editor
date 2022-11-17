@@ -16,11 +16,7 @@ enum CaseType{
 	NONE = ' ' ///< Vide
 };
 
-typedef struct Player{
-    int x; ///< Position x du joueur (colonne)
-    int y; ///< Position y du joueur (ligne)
-}Player;
-
+struct Player;
 
 /**
  * @struct Grid grid.h
@@ -32,14 +28,10 @@ typedef struct Grid{
 	int column_number; ///< Nombre de colonne de game_grid
 	int row_number; ///< Nombre de ligne de game_grid
     int goal_number; ///< Nombre d'endroits où mettre les caisses
-    Player player;
+    struct Player player;
 }Grid;
 
-/**
- * @struct Player player.h
- * @brief Cette structure contient les informations 
- * concernant la position du joueur
- */
+
 
 
 /** 
