@@ -28,7 +28,7 @@ typedef struct Grid{
 	int column_number; ///< Nombre de colonne de game_grid
 	int row_number; ///< Nombre de ligne de game_grid
     int goal_number; ///< Nombre d'endroits où mettre les caisses
-    struct Player player;
+    struct Player player; ///< Représentant le joueur sur la grille
 }Grid;
 
 
