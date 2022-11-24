@@ -42,10 +42,10 @@ int main(void){
 		}
 	}
 
-    for(int i = 0; i < a.row_number;i++){
-        free(a.game_grid[i]);
-    }
-    free(a.game_grid);
+	   for(int i = 0; i < a.row_number;i++){
+	       free(a.game_grid[i]);
+	   }
+	   free(a.game_grid);
 	return 0;
 }
 

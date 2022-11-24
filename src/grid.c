@@ -13,6 +13,10 @@ void setCell(Grid* a,int i ,int j, char val){
     a->game_grid[i][j]=val;
 }
 
+void setPosCell(Grid* a, Position pos, char val){
+    setCell(a,pos.y,pos.x,val);
+}
+
 Grid init_level(const char* file_path){
     // ouverture du fichier en mode lecture
     struct Grid a_r;
@@ -46,8 +50,8 @@ Grid init_level(const char* file_path){
 		while(*buffer && *buffer != '\n'){
 			setCell(&a_r,current_row,current_column,*buffer);
 			if((*buffer)=='@'){
-				a_r.player.x = current_column;
-				a_r.player.y = current_row;
+				a_r.player.pos.x = current_column;
+				a_r.player.pos.y = current_row;
             }
             current_column += 1;			
 			buffer += 1;			
@@ -60,6 +64,16 @@ Grid init_level(const char* file_path){
 	return a_r;
 }
 
+char checkCase(Grid a, Position pos){
+    return a.game_grid[pos.y][pos.x];
+}
+
+void switchCase(Grid* a, Position pos1, Position pos2){
+    char tempChar = checkCase(*a, pos2);
+    setPosCell(a,pos2,checkCase(*a,pos1));
+    setPosCell(a,pos1,tempChar);
+}
+
 void display(Grid* g){
 	#ifdef _WIN32
 		char clear[]="cls";
@@ -67,6 +81,7 @@ void display(Grid* g){
 		char clear[]="clear";
 	#endif
 	system(clear);
+
 	for(int i =0;i < g->row_number;i++){
 		for(int j = 0; j < g->column_number;j++){
 			fprintf(stdout,"%c",g->game_grid[i][j]);

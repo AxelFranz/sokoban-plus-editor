@@ -47,6 +47,9 @@ Grid init_level(const char* file_path);
  */
 void display(Grid* g);
 
+char checkCase(Grid a, Position pos);
+
+void switchCase(Grid* a, Position pos1, Position pos2);
 
 /**
  * @brief Modification d'une case de la grille

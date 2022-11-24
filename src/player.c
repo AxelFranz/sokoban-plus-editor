@@ -8,42 +8,52 @@
 #include "grid.h"
 #include <stdio.h>
 #include <stdlib.h>
-void getPlayerPos(Grid a,int* tab){
-    tab[0]=a.player.x;
-    tab[1]=a.player.y;
+
+Position getPlayerPos(Player a){
+    return a.pos;
+}
+
+
+Position posDir(Position pos, enum Direction d){
+    Position new_pos = pos;
+    switch(d){
+       case Top:
+           new_pos.y--;
+           break;
+
+        case Left:
+            new_pos.x--;
+            break;
+
+        case Right:
+            new_pos.x++;
+            break;
+
+        case Bottom:
+            new_pos.y++;
+            break;
+    }
+    return new_pos;
 }
 
 void move_player(Grid* a, enum Direction d){
-	int playerCoord[2];
-	getPlayerPos(*a,playerCoord);
-	if(d == Right){
-		if(a->game_grid[playerCoord[1]][playerCoord[0]+1] == ' '){
-			setCell(a,playerCoord[1],playerCoord[0]+1, '@');
-			setCell(a,playerCoord[1],playerCoord[0], ' ');
-			a->player.x=playerCoord[0]+1;
-		}
-	}
-	if(d == Left){
-		if(a->game_grid[playerCoord[1]][playerCoord[0]-1] == ' '){
-			setCell(a,playerCoord[1],playerCoord[0]-1, '@');
-			setCell(a,playerCoord[1],playerCoord[0], ' ');
-			a->player.x=playerCoord[0]-1;
-		}
-	}
-	if(d == Bottom){
-		if(a->game_grid[playerCoord[1]+1][playerCoord[0]] == ' '){
-			setCell(a,playerCoord[1]+1,playerCoord[0], '@');
-			setCell(a,playerCoord[1],playerCoord[0], ' ');
-			a->player.y=playerCoord[1]+1;
-		}
-	}
-	if(d == Top){
-		if(a->game_grid[playerCoord[1]-1][playerCoord[0]] == ' '){
-			setCell(a,playerCoord[1]-1,playerCoord[0], '@');
-			setCell(a,playerCoord[1],playerCoord[0], ' ');
-			a->player.y=playerCoord[1]-1;
-		}
-	}
+	Position pos = getPlayerPos(a->player);
+    Position new_pos = posDir(pos, d);
+    if(checkCase(*a,new_pos) == ' '){
+        switchCase(a,pos,new_pos);
+        a->player.pos=new_pos;
+    } else if(checkCase(*a,new_pos) == '$'){
+        Position test = posDir(new_pos, d);
+        if(checkCase(*a,test) == ' '){
+            switchCase(a,new_pos, test);
+            switchCase(a, new_pos, pos);
+             a->player.pos=new_pos;
+        }
+    }
+         
 
+    // A FINIR D'ECRIRE
+    // LE SWITCH CASE ET IMPLEMENTATION FINIE
 	display(a);
 }
+

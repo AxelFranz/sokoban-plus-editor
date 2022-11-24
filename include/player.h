@@ -7,14 +7,18 @@
 #ifndef PLAYER_HEADER
 #define PLAYER_HEADER
 
+typedef struct Position{
+    int x;
+    int y;
+}Position;
+
 /**
  * @struct Player player.h
  * @brief Cette structure contient les informations 
  * concernant la position du joueur
  */
 typedef struct Player{
-    int x; ///< Position x du joueur (colonne)
-    int y; ///< Position y du joueur (ligne)
+    struct Position pos; ///< Position du joueur
 }Player;
 
 struct Grid;
@@ -35,13 +39,12 @@ enum Direction{
  */
 void move_player(struct Grid* a, enum Direction d);
 
-
 /**
  * @brief Fonction permettant de récuperer la position du joueur
  * @param a Structure de la grille de jeu
  * @param tab Pointeur vers tableau à 2 éléments vide qui comprendra les coordonnées
  */
-void getPlayerPos(struct Grid a, int* tab);
+Position getPlayerPos(struct Player a);
 
 #endif
 
