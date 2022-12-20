@@ -28,6 +28,7 @@ typedef struct Grid{
 	int column_number; ///< Nombre de colonne de game_grid
 	int row_number; ///< Nombre de ligne de game_grid
     int goal_number; ///< Nombre d'endroits où mettre les caisses
+    Position* goals; ///< Tableau avec les positions des goals
     struct Player player; ///< Représentant le joueur sur la grille
 }Grid;
 
@@ -49,7 +50,11 @@ void display(Grid* g);
 
 char checkCase(Grid a, Position pos);
 
+int isNoWall(Grid* a, Position pos);
+
 void switchCase(Grid* a, Position pos1, Position pos2);
+
+void freeGrid(Grid* g);
 
 /**
  * @brief Modification d'une case de la grille

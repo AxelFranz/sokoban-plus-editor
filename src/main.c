@@ -16,7 +16,7 @@ int main(void){
 	bool run = true;
 	Grid a = init_level("level1.txt");
 	display(&a);
-	while(run){
+    while(run){
 		char entry = fgetc(stdin);
 		switch(entry){
 			case 'h':{
@@ -41,11 +41,7 @@ int main(void){
 			}
 		}
 	}
-
-	   for(int i = 0; i < a.row_number;i++){
-	       free(a.game_grid[i]);
-	   }
-	   free(a.game_grid);
-	return 0;
+    freeGrid(&a);
+    return 0;
 }
 

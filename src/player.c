@@ -8,6 +8,7 @@
 #include "grid.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 Position getPlayerPos(Player a){
     return a.pos;
@@ -39,21 +40,16 @@ Position posDir(Position pos, enum Direction d){
 void move_player(Grid* a, enum Direction d){
 	Position pos = getPlayerPos(a->player);
     Position new_pos = posDir(pos, d);
-    if(checkCase(*a,new_pos) == ' '){
-        switchCase(a,pos,new_pos);
-        a->player.pos=new_pos;
-    } else if(checkCase(*a,new_pos) == '$'){
+    if(checkCase(*a,new_pos) == '$'){
         Position test = posDir(new_pos, d);
-        if(checkCase(*a,test) == ' '){
+        if(isNoWall(a,test)){
             switchCase(a,new_pos, test);
-            switchCase(a, new_pos, pos);
-             a->player.pos=new_pos;
         }
     }
-         
-
-    // A FINIR D'ECRIRE
-    // LE SWITCH CASE ET IMPLEMENTATION FINIE
+    if(isNoWall(a,new_pos)){
+        switchCase(a,pos,new_pos);
+        a->player.pos=new_pos;
+    }
 	display(a);
 }
 
