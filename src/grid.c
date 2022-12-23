@@ -9,13 +9,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void setCell(Grid* a,int i ,int j, char val){
-    a->game_grid[i][j]=val;
+void setCell(Grid* g,int i ,int j, char val){
+    g->game_grid[i][j]=val;
 }
 
-void setPosCell(Grid* a, Position pos, char val){
-    setCell(a,pos.y,pos.x,val);
+void setPosCell(Grid* g, Position pos, char val){
+    setCell(g,pos.y,pos.x,val);
 }
+
 
 Grid init_level(const char* file_path){
     // ouverture du fichier en mode lecture
@@ -74,17 +75,25 @@ Grid init_level(const char* file_path){
 	return a_r;
 }
 
-char checkCase(Grid a, Position pos){
-    return a.game_grid[pos.y][pos.x];
+char checkCase(Grid g, Position pos){
+    return g.game_grid[pos.y][pos.x];
 }
 
-int isNoWall(Grid* a, Position pos){
-    return !(checkCase(*a,pos) == '#' || checkCase(*a,pos)== '$');
+int isNoWall(Grid* g, Position pos){
+    return !(checkCase(*g,pos) == '#' || checkCase(*g,pos)== '$');
 } 
 
-void switchCase(Grid* a, Position pos1, Position pos2){
-    setPosCell(a,pos2,checkCase(*a,pos1));
-    setPosCell(a,pos1,' ');
+void switchCase(Grid* g, Position pos1, Position pos2){
+    setPosCell(g,pos2,checkCase(*g,pos1));
+    setPosCell(g,pos1,' ');
+}
+
+int checkFinish(Grid* g){
+    int count = 0;
+    for(int i = 0; i < g->goal_number; i++){
+        if(checkCase(*g,g->goals[i])=='$') count++;
+    }
+    return (count==g->goal_number);
 }
 
 void freeGrid(Grid* g){

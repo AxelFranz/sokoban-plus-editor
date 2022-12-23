@@ -39,8 +39,12 @@ int main(void){
 				run = false;
 				break;
 			}
-		}
-	}
+	    }
+        if(checkFinish(&a)){
+            fprintf(stdout,"\nBravo vous avez gagné !\n");
+            run=false;
+        } 
+    }
     freeGrid(&a);
     return 0;
 }

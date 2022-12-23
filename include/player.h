@@ -37,7 +37,7 @@ enum Direction{
  * @param a Pointeur vers la grille de jeu
  * @param d Direction du mouvement
  */
-void move_player(struct Grid* a, enum Direction d);
+void move_player(struct Grid* g, enum Direction d);
 
 /**
  * @brief Fonction permettant de récuperer la position du joueur

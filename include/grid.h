@@ -48,13 +48,15 @@ Grid init_level(const char* file_path);
  */
 void display(Grid* g);
 
-char checkCase(Grid a, Position pos);
+char checkCase(Grid g, Position pos);
 
-int isNoWall(Grid* a, Position pos);
+int isNoWall(Grid* g, Position pos);
 
-void switchCase(Grid* a, Position pos1, Position pos2);
+void switchCase(Grid* g, Position pos1, Position pos2);
 
 void freeGrid(Grid* g);
+
+int checkFinish(Grid* g);
 
 /**
  * @brief Modification d'une case de la grille

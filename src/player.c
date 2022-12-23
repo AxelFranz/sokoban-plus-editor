@@ -37,19 +37,19 @@ Position posDir(Position pos, enum Direction d){
     return new_pos;
 }
 
-void move_player(Grid* a, enum Direction d){
-	Position pos = getPlayerPos(a->player);
+void move_player(Grid* g, enum Direction d){
+	Position pos = getPlayerPos(g->player);
     Position new_pos = posDir(pos, d);
-    if(checkCase(*a,new_pos) == '$'){
+    if(checkCase(*g,new_pos) == '$'){
         Position test = posDir(new_pos, d);
-        if(isNoWall(a,test)){
-            switchCase(a,new_pos, test);
+        if(isNoWall(g,test)){
+            switchCase(g,new_pos, test);
         }
     }
-    if(isNoWall(a,new_pos)){
-        switchCase(a,pos,new_pos);
-        a->player.pos=new_pos;
+    if(isNoWall(g,new_pos)){
+        switchCase(g,pos,new_pos);
+        g->player.pos=new_pos;
     }
-	display(a);
+	display(g);
 }
 
