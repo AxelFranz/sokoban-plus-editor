@@ -61,7 +61,6 @@ Grid init_level(const char* file_path){
             } else if ((*buffer)=='.'){
                 a_r.goals[current_goal].x = current_column;
                 a_r.goals[current_goal].y = current_row;
-                printf("\nGoal : %d, x : %d, y : %d \n",current_goal,a_r.goals[current_goal].x, a_r.goals[current_goal].y);
                 current_goal=1;
             }
             current_column += 1;			

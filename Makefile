@@ -1,16 +1,15 @@
 CFLAGS= -Wall -Wextra
-INCFLAGS= -I include
+INCFLAGS= -I include/
 OBJPATH=obj/
-LDFLAGS= -Wl,-rpath=install_dir/lib
+CC = gcc
 vpath %.c src/
 vpath %.h include/
 vpath %.o obj/
 
 main: $(addprefix $(OBJPATH),$(addsuffix .o,$(basename $(notdir $(wildcard src/*.c)))))
-	gcc $(CFLAGS) -o $@ $^ $(LDFLAGS)
-
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)`$$PWD/install_dir/bin/sdl2-config --cflags --libs`
 $(OBJPATH)%.o : %.c $(OBJPATH) 
-	gcc $(CFLAGS) $(INCFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) $(INCFLAGS) -c -o $@ $<
 
 $(OBJPATH):
 	mkdir $@
@@ -21,8 +20,9 @@ doc:
 compilSDL:
 	cd SDL2/ && ./configure --prefix="$$PWD/../install_dir" && make install -j6
 
+
 clean: 
-	rm -rf doc main vgcore.* FRA* $(OBJPATH) install_dir 
+	rm -rf doc main vgcore.* FRA* $(OBJPATH) install_dir/
 
 archive:
 	tar -cf FRANZ_Axel.tar.gz include/ src/ Makefile README.md Doxyfile level?.txt 
