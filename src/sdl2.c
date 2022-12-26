@@ -81,10 +81,45 @@ void display_sdl2(Grid* g){
                 case '@':
                     fillPos(caseWidth,caseHeight,check,S_RED);
                     break;
-                default:
+                case ' ':
                     fillPos(caseWidth,caseHeight,check,S_GREY);
                     break;
             } 
         }
+    }
+    for(int i = 0; i < g->goal_number;i++){
+        if(checkCase(*g,g->goals[i])==' '){
+            fillPos(caseWidth,caseHeight,g->goals[i],S_GREEN);
+        }
+    }
+    
+    SDL_RenderPresent(context.renderer);
+}
+
+enum Event event_sdl2(){
+    SDL_Event ev;
+    SDL_WaitEvent(&ev);
+    switch(ev.type){
+        case SDL_KEYDOWN:
+            switch(ev.key.keysym.sym){
+            case SDLK_h:
+                return Left;
+            case SDLK_j:
+                return Bottom;
+            case SDLK_k:
+                return Top;
+            case SDLK_l:
+                return Right;
+            case SDLK_q:
+                return Quit;
+            default:
+                return None;
+            
+            }
+        case SDL_QUIT:
+            printf("Quit\n");
+            return Quit;
+        default:
+            return None;
     }
 }

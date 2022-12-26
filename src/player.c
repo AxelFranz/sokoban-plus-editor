@@ -14,8 +14,26 @@ Position getPlayerPos(Player a){
     return a.pos;
 }
 
+enum Event event(){
+    char entry = fgetc(stdin);
+    switch(entry){
+        case 'h':
+            return Left;
+        case 'j':
+            return Bottom;
+        case 'k':
+            return Top;
+        case 'l':
+            return Right;
+        case 'q':
+            return Quit;
+        default:
+            return None;
+    }
+}
 
-Position posDir(Position pos, enum Direction d){
+
+Position posDir(Position pos, enum Event d){
     Position new_pos = pos;
     switch(d){
        case Top:
@@ -33,11 +51,13 @@ Position posDir(Position pos, enum Direction d){
         case Bottom:
             new_pos.y++;
             break;
+        default:
+            break;
     }
     return new_pos;
 }
 
-void move_player(Grid* g, enum Direction d){
+void move_player(Grid* g, enum Event d){
 	Position pos = getPlayerPos(g->player);
     Position new_pos = posDir(pos, d);
     if(checkCase(*g,new_pos) == '$'){
@@ -50,6 +70,5 @@ void move_player(Grid* g, enum Direction d){
         switchCase(g,pos,new_pos);
         g->player.pos=new_pos;
     }
-	display(g);
 }
 

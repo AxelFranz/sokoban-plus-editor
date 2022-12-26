@@ -23,12 +23,14 @@ typedef struct Player{
 
 struct Grid;
 
-/// Enumération des directions
-enum Direction{
-    Top, ///< Haut
-    Left, ///< Gauche
-    Right, ///< Droite
-    Bottom ///< Bas
+
+enum Event{
+    Quit,
+    Left,
+    Right,
+    Top,
+    Bottom,
+    None
 };
 
 
@@ -37,7 +39,7 @@ enum Direction{
  * @param a Pointeur vers la grille de jeu
  * @param d Direction du mouvement
  */
-void move_player(struct Grid* g, enum Direction d);
+void move_player(struct Grid* g, enum Event d);
 
 /**
  * @brief Fonction permettant de récuperer la position du joueur
@@ -45,6 +47,8 @@ void move_player(struct Grid* g, enum Direction d);
  * @param tab Pointeur vers tableau à 2 éléments vide qui comprendra les coordonnées
  */
 Position getPlayerPos(struct Player a);
+
+enum Event event();
 
 #endif
 

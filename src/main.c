@@ -18,28 +18,32 @@ SDLContext context;
 int main(void){
 	bool run = true;
 	Grid a = init_level("level1.txt");
-    sdl_init();
+    enum Event (*handle_event)() = event;
+    /* sdl_init(); */
 
     while(run){
-        display_sdl2(&a);
-        SDL_RenderPresent(context.renderer); // On affiche tout
-        SDL_Event ev;
-        SDL_WaitEvent(&ev);
-        switch (ev.type){
-        case SDL_QUIT:
-            sdl_quit();
-            run=false;
-          // on a appuyé sur le bouton "quitter" de la fenêtre
-          break;
-        case SDL_KEYUP:
-          run=false;
-          sdl_quit();
-          // on a relaché une touche du clavier.
-          break;
+        display(&a);
+        enum Event entry = (*handle_event)();
+        switch(entry){ 
+			case Quit:{
+				run = false;
+                break;
+			}
+			case None:{
+				break;
+			}
+            default:
+                move_player(&a,entry);
+                break;
         }
+	    if(checkFinish(&a)){
+            display(&a);
+	        fprintf(stdout,"Bravo vous avez gagné !\n");
+	        run=false;
+	    }
     }
 
-    sdl_quit();
+    /* sdl_quit(); */
 	/* display(&a); */
 	/*    while(run){ */
 	/* 	char entry = fgetc(stdin); */
@@ -70,7 +74,7 @@ int main(void){
 	/*            run=false; */
 	/*        }  */
 	/*    } */
-	   freeGrid(&a);
+	freeGrid(&a);
     return 0;
 }
 

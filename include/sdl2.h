@@ -24,6 +24,7 @@ extern const Color S_ORANGE;
 struct Position;
 struct Grid;
 extern SDLContext context;
+enum Event;
 
 /* @brief 
  * Initialise une variable global `context` de type SDLContext
@@ -50,3 +51,7 @@ void setBackgroundColor(Color c);
 void fillPos(int caseHeight, int caseWidth, struct Position p, Color c);
 
 void display_sdl2(struct Grid* g);
+
+enum Event event_sdl2();
+
+

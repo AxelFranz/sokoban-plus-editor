@@ -8,6 +8,7 @@ vpath %.o obj/
 
 main: $(addprefix $(OBJPATH),$(addsuffix .o,$(basename $(notdir $(wildcard src/*.c)))))
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)`$$PWD/install_dir/bin/sdl2-config --cflags --libs`
+
 $(OBJPATH)%.o : %.c $(OBJPATH) 
 	$(CC) $(CFLAGS) $(INCFLAGS) -c -o $@ $<
 
