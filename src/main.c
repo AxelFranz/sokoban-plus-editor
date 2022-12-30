@@ -5,10 +5,10 @@
  */
 #include <stdio.h>
 #include <string.h>
-#include "player.h"
 #include <stdbool.h>
-#include "grid.h"
 #include <stdlib.h>
+#include "player.h"
+#include "grid.h"
 #include "sdl2.h"
 
 SDLContext context;
@@ -17,7 +17,8 @@ SDLContext context;
  * @brief Fonction main qui lance le jeu
  */
 int main(int argc, char** argv){
-    bool isSDL = argc == 2 && strcmp(argv[1],"--sdl2") ==0;
+    bool isSDL = argc == 2 && strcmp(argv[1],"--sdl2") == 0;
+
     enum Event(*handle_event)();
     void (*handle_display)(Grid*);
 
@@ -26,7 +27,7 @@ int main(int argc, char** argv){
         sdl_init();
         handle_event = event_sdl2;
         handle_display = display_sdl2;
-    } else if(argc == 1 || (argc == 2 && strcmp(argv[1],"--console")==0)){
+    } else if(argc == 1 || (argc == 2 && strcmp(argv[1],"--console") == 0)){
         handle_event = event;
         handle_display = display;
     } else {
@@ -36,7 +37,6 @@ int main(int argc, char** argv){
     }
     bool run = true;
 	Grid a = init_level("level1.txt");
-    /* sdl_init(); */
 
     while(run){
         handle_display(&a);
@@ -60,38 +60,6 @@ int main(int argc, char** argv){
 	        run=false;
 	    }
     }
-
-    /* sdl_quit(); */
-	/* display(&a); */
-	/*    while(run){ */
-	/* 	char entry = fgetc(stdin); */
-	/* 	switch(entry){ */
-	/* 		case 'h':{ */
-	/* 			move_player(&a,Left); */
-	/* 			break; */
-	/* 		} */
-	/* 		case 'j':{ */
-	/* 			move_player(&a,Bottom); */
-	/* 			break; */
-	/* 		} */
-	/* 		case 'k':{ */
-	/* 			move_player(&a,Top); */
-	/* 			break; */
-	/* 		} */
-	/* 		case 'l':{ */
-	/* 			move_player(&a,Right); */
-	/* 			break; */
-	/* 		} */
-	/* 		case 'q' :{ */
-	/* 			run = false; */
-	/* 			break; */
-	/* 		} */
-	/*     } */
-	/*        if(checkFinish(&a)){ */
-	/*            fprintf(stdout,"\nBravo vous avez gagné !\n"); */
-	/*            run=false; */
-	/*        }  */
-	/*    } */
 	freeGrid(&a);
     return 0;
 }

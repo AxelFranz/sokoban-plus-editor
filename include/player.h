@@ -7,9 +7,12 @@
 #ifndef PLAYER_HEADER
 #define PLAYER_HEADER
 
+/** Position player.h
+ * @brief Une position composée d'un x et d'un y
+ */
 typedef struct Position{
-    int x;
-    int y;
+    int x; ///< La position x
+    int y; ///< La position y
 }Position;
 
 /**
@@ -21,22 +24,23 @@ typedef struct Player{
     struct Position pos; ///< Position du joueur
 }Player;
 
+// Pour les dépendances
 struct Grid;
 
-
+/// Enumération des évènements possibles
 enum Event{
-    Quit,
-    Left,
-    Right,
-    Top,
-    Bottom,
-    None
+    Quit, ///< Quitter le jeu
+    Left, ///< Aller à gauche
+    Right, ///< Aller à droite
+    Top, ///< Aller en haut
+    Bottom, ///< Aller en base
+    None ///< Ne rien faire
 };
 
 
 /**
  * @brief Fonction permettant de déplacer le joueur
- * @param a Pointeur vers la grille de jeu
+ * @param g Pointeur vers la grille de jeu
  * @param d Direction du mouvement
  */
 void move_player(struct Grid* g, enum Event d);
@@ -44,10 +48,22 @@ void move_player(struct Grid* g, enum Event d);
 /**
  * @brief Fonction permettant de récuperer la position du joueur
  * @param a Structure de la grille de jeu
- * @param tab Pointeur vers tableau à 2 éléments vide qui comprendra les coordonnées
+ * @return La position du joueur
  */
 Position getPlayerPos(struct Player a);
 
+/**
+ * @brief Renvoie la position potentielle après déplacement
+ * @param pos La position de base
+ * @param d La direction
+ * @return La position après déplacement
+ */
+Position posDir(Position pos, enum Event d);
+
+/**
+ * @brief Renvoie l'évènement reçu pendant l'execution du programme
+ * @return L'évènement reçu
+ */
 enum Event event();
 
 #endif

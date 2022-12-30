@@ -1,3 +1,9 @@
+/** 
+ * @file sdl2.c
+ * Fichier contenant toutes les fonctions définies dans sdl2.h
+ * @author Axel FRANZ
+ */
+
 #include "sdl2.h"
 #include "player.h"
 #include "grid.h"

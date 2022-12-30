@@ -1,4 +1,6 @@
 main
+*.tar.gz
+doc/
 obj/
 vgcore*
 install_dir/

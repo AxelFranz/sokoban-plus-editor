@@ -55,10 +55,10 @@ Grid init_level(const char* file_path){
 		int current_column = 0;
 		while(*buffer && *buffer != '\n'){
 			setCell(&a_r,current_row,current_column,*buffer);
-			if((*buffer)=='@'){
+			if((*buffer)==PLAYER){
                 a_r.player.pos.x = current_column;
 				a_r.player.pos.y = current_row;
-            } else if ((*buffer)=='.'){
+            } else if ((*buffer)==GOAL){
                 a_r.goals[current_goal].x = current_column;
                 a_r.goals[current_goal].y = current_row;
                 current_goal=1;
@@ -79,7 +79,7 @@ char checkCase(Grid g, Position pos){
 }
 
 int isNoWall(Grid* g, Position pos){
-    return !(checkCase(*g,pos) == '#' || checkCase(*g,pos)== '$');
+    return !(checkCase(*g,pos) == WALL || checkCase(*g,pos)== BOX);
 } 
 
 void switchCase(Grid* g, Position pos1, Position pos2){
@@ -90,7 +90,7 @@ void switchCase(Grid* g, Position pos1, Position pos2){
 int checkFinish(Grid* g){
     int count = 0;
     for(int i = 0; i < g->goal_number; i++){
-        if(checkCase(*g,g->goals[i])=='$') count++;
+        if(checkCase(*g,g->goals[i])==BOX) count++;
     }
     return (count==g->goal_number);
 }
@@ -111,8 +111,8 @@ void display(Grid* g){
 	#endif
 	system(clear);
     for(int i = 0; i < g->goal_number;i++){
-        if(checkCase(*g,g->goals[i])==' '){
-            setPosCell(g,g->goals[i],'.');
+        if(checkCase(*g,g->goals[i])==NONE){
+            setPosCell(g,g->goals[i],GOAL);
         }
     }
     

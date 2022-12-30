@@ -988,7 +988,7 @@ configure:17719: $? = 0
 configure:17719: result: yes
 configure:17719: checking for wcslcpy
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccD3KVB6.o: in function `main':
+/usr/bin/ld: /tmp/ccHh5OrO.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:96: undefined reference to `wcslcpy'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -1095,7 +1095,7 @@ configure: failed program was:
 configure:17719: result: no
 configure:17719: checking for wcslcat
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccvNqvyh.o: in function `main':
+/usr/bin/ld: /tmp/cceOzJQW.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:96: undefined reference to `wcslcat'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -1202,7 +1202,7 @@ configure: failed program was:
 configure:17719: result: no
 configure:17719: checking for _wcsdup
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccWohoK6.o: in function `main':
+/usr/bin/ld: /tmp/ccw0iUtg.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:96: undefined reference to `_wcsdup'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -1329,7 +1329,7 @@ configure:17719: $? = 0
 configure:17719: result: yes
 configure:17719: checking for _wcsicmp
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccrip3Q4.o: in function `main':
+/usr/bin/ld: /tmp/ccgDBtPp.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:101: undefined reference to `_wcsicmp'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -1445,7 +1445,7 @@ configure:17719: $? = 0
 configure:17719: result: yes
 configure:17719: checking for _wcsnicmp
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccxmGpIL.o: in function `main':
+/usr/bin/ld: /tmp/ccnkaycI.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:102: undefined reference to `_wcsnicmp'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -1568,7 +1568,7 @@ configure:17719: $? = 0
 configure:17719: result: yes
 configure:17719: checking for strlcpy
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccU1dL09.o: in function `main':
+/usr/bin/ld: /tmp/cctyb5xc.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:103: undefined reference to `strlcpy'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -1682,7 +1682,7 @@ configure: failed program was:
 configure:17719: result: no
 configure:17719: checking for strlcat
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/cc5MsLwP.o: in function `main':
+/usr/bin/ld: /tmp/ccvJHhnc.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:103: undefined reference to `strlcat'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -1796,7 +1796,7 @@ configure: failed program was:
 configure:17719: result: no
 configure:17719: checking for _strrev
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccUXndzb.o: in function `main':
+/usr/bin/ld: /tmp/cc4A7FKF.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:103: undefined reference to `_strrev'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -1910,7 +1910,7 @@ configure: failed program was:
 configure:17719: result: no
 configure:17719: checking for _strupr
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccoxmLev.o: in function `main':
+/usr/bin/ld: /tmp/ccBogYoR.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:103: undefined reference to `_strupr'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -2024,7 +2024,7 @@ configure: failed program was:
 configure:17719: result: no
 configure:17719: checking for _strlwr
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccsoEr0o.o: in function `main':
+/usr/bin/ld: /tmp/cc4MJdSW.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:103: undefined reference to `_strlwr'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -2186,7 +2186,7 @@ configure:17719: $? = 0
 configure:17719: result: yes
 configure:17719: checking for itoa
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccFC80I8.o: in function `main':
+/usr/bin/ld: /tmp/ccctKvNB.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:109: undefined reference to `itoa'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -2306,7 +2306,7 @@ configure: failed program was:
 configure:17719: result: no
 configure:17719: checking for _ltoa
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/cc33CbkC.o: in function `main':
+/usr/bin/ld: /tmp/ccfl7C9f.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:109: undefined reference to `_ltoa'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -2426,7 +2426,7 @@ configure: failed program was:
 configure:17719: result: no
 configure:17719: checking for _uitoa
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/cc9ZenHz.o: in function `main':
+/usr/bin/ld: /tmp/ccz2b319.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:109: undefined reference to `_uitoa'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -2546,7 +2546,7 @@ configure: failed program was:
 configure:17719: result: no
 configure:17719: checking for _ultoa
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccoHkgLp.o: in function `main':
+/usr/bin/ld: /tmp/cc17hSPs.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:109: undefined reference to `_ultoa'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -2674,7 +2674,7 @@ configure:17719: $? = 0
 configure:17719: result: yes
 configure:17719: checking for _i64toa
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccX635nd.o: in function `main':
+/usr/bin/ld: /tmp/ccjCyG2I.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:111: undefined reference to `_i64toa'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -2796,7 +2796,7 @@ configure: failed program was:
 configure:17719: result: no
 configure:17719: checking for _ui64toa
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/cciBs3j9.o: in function `main':
+/usr/bin/ld: /tmp/ccnmnGXp.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:111: undefined reference to `_ui64toa'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -2954,7 +2954,7 @@ configure:17719: $? = 0
 configure:17719: result: yes
 configure:17719: checking for _stricmp
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccMTLhlZ.o: in function `main':
+/usr/bin/ld: /tmp/cclOHhnw.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:117: undefined reference to `_stricmp'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -3089,7 +3089,7 @@ configure:17719: $? = 0
 configure:17719: result: yes
 configure:17719: checking for _strnicmp
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccq4BCQx.o: in function `main':
+/usr/bin/ld: /tmp/ccPlRYd9.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:118: undefined reference to `_strnicmp'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -3273,7 +3273,7 @@ configure:17719: $? = 0
 configure:17719: result: yes
 configure:17719: checking for sysctlbyname
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/ccELnFIB.o: in function `main':
+/usr/bin/ld: /tmp/ccqo81aB.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:128: undefined reference to `sysctlbyname'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -3416,7 +3416,7 @@ configure:17719: $? = 0
 configure:17719: result: yes
 configure:17719: checking for elf_aux_info
 configure:17719: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   conftest.c  >&5
-/usr/bin/ld: /tmp/cc7TZrnc.o: in function `main':
+/usr/bin/ld: /tmp/ccmSu9IQ.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:129: undefined reference to `elf_aux_info'
 collect2: error: ld returned 1 exit status
 configure:17719: $? = 1
@@ -6914,7 +6914,7 @@ configure:24530: $? = 0
 configure:24544: result: yes
 configure:24547: checking for pthread_set_name_np
 configure:24567: gcc -o conftest -g -O2 -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos   -D_REENTRANT  -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos    conftest.c  -lm -lpthread >&5
-/usr/bin/ld: /tmp/cc8mNFxz.o: in function `main':
+/usr/bin/ld: /tmp/ccpIv4Tx.o: in function `main':
 /home/axel/techdev-sokoban-franz/SDL2/conftest.c:232: undefined reference to `pthread_set_name_np'
 collect2: error: ld returned 1 exit status
 configure:24567: $? = 1

@@ -60,7 +60,7 @@ Position posDir(Position pos, enum Event d){
 void move_player(Grid* g, enum Event d){
 	Position pos = getPlayerPos(g->player);
     Position new_pos = posDir(pos, d);
-    if(checkCase(*g,new_pos) == '$'){
+    if(checkCase(*g,new_pos) == BOX){
         Position test = posDir(new_pos, d);
         if(isNoWall(g,test)){
             switchCase(g,new_pos, test);

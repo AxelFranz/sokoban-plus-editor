@@ -1,2 +1,2 @@
-#define SDL_REVISION "git@git.unistra.fr:a.franz/techdev-sokoban-franz.git@8501495ef4ac72525299f1f38f887ead35548bab"
+#define SDL_REVISION "git@git.unistra.fr:a.franz/techdev-sokoban-franz.git@1c496a55d4d4c5229900b71b7ad93cc75515e614"
 #define SDL_REVISION_NUMBER 0
