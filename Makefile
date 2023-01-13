@@ -7,6 +7,7 @@ vpath %.c src/
 vpath %.h include/
 vpath %.o obj/
 
+
 all: install_dir/lib doc main# On vérfie l'existence lib car dans les autres dossiers SDL il y a des fichiers de log qui s'updatent et referont compiler alors que lib est statique
 
 main: $(addprefix $(OBJPATH),$(addsuffix .o,$(basename $(notdir $(wildcard src/*.c)))))

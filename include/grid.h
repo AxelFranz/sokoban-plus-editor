@@ -104,4 +104,6 @@ void setCell(Grid* a,int i ,int j, char val);
  */
 void setPosCell(Grid* g, Position pos, char val);
 
+int getGoalNumber(Grid g);
+
 #endif

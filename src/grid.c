@@ -123,3 +123,14 @@ void display(Grid* g){
 		fprintf(stdout,"\n");
 	}
 }
+
+int getGoalNumber(Grid g){
+    int count = 0;
+    Position check;
+    for(check.y = 0; check.y < g.row_number; check.y++){
+        for(check.x = 0; check.x < g.column_number; check.x++){
+            if(checkCase(g,check) == GOAL) count++;
+        }
+    }
+    return count;
+}

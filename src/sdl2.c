@@ -68,9 +68,12 @@ void fillPos(int caseWidth, int caseHeight, Position p, Color c){
     draw_rect(basex,basey,caseWidth,caseHeight,c);
 }
 
+static int caseWidth;
+static int caseHeight;
+
 void display_sdl2(Grid* g){
-    int caseWidth = context.width/g->column_number;
-    int caseHeight = context.height/g->row_number;
+    caseWidth = context.width/g->column_number;
+    caseHeight = context.height/g->row_number;
     for(int i = 0; i < g->row_number; i++){
         for(int j = 0; j < g->column_number; j++){
             Position check = {.x = j, .y = i };
@@ -123,9 +126,18 @@ enum Event event_sdl2(){
             
             }
         case SDL_QUIT:
-            printf("Quit\n");
             return Quit;
         default:
             return None;
     }
+}
+
+char items[] = {NONE,WALL,BOX,PLAYER,GOAL};
+void changeCase(Grid* a){
+    int x,y;
+    SDL_GetMouseState(&x,&y);
+    Position clic = {x/caseWidth,y/caseHeight};
+    int listIndex;
+    for(int i = 0; i < 5; i++) if(items[i] == checkCase(*a,clic)) listIndex=(i+1)%5;
+    setPosCell(a,clic,items[listIndex]);
 }
