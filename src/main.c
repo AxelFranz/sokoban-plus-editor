@@ -11,7 +11,6 @@
 #include "grid.h"
 #include "sdl2.h"
 #include "fileIO.h"
-#include "editmode.h"
 
 SDLContext context;
 
@@ -81,7 +80,7 @@ int main(int argc, char** argv){
 	        run=false;
 	    }
     }
-    if(isSDL) sdl_quit();
+    if(isSDL || isEditor) sdl_quit();
 	freeGrid(&a);
     return 0;
 }

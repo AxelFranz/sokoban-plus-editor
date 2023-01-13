@@ -90,3 +90,7 @@ void display_sdl2(struct Grid* g);
 enum Event event_sdl2();
 
 void changeCase(struct Grid* a);
+
+enum Event event_editor();
+
+void display_editor(struct Grid* g);
