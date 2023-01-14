@@ -10,6 +10,7 @@
 #include "player.h"
 #include "grid.h"
 #include "sdl2.h"
+#include "fileIO.h"
 
 SDLContext context;
 
@@ -17,7 +18,9 @@ SDLContext context;
  * @brief Fonction main qui lance le jeu
  */
 int main(int argc, char** argv){
-    bool isSDL = argc == 2 && strcmp(argv[1],"--sdl2") == 0;
+    bool isSDL = argc == 1 ||(argc == 2 && strcmp(argv[1],"--sdl2") == 0);
+    bool isEditor = argc == 2 && strcmp(argv[1],"--editor") == 0;
+    bool isConsole = argc == 2 && strcmp(argv[1],"--console") == 0;
 
     enum Event(*handle_event)();
     void (*handle_display)(Grid*);
@@ -27,12 +30,16 @@ int main(int argc, char** argv){
         sdl_init();
         handle_event = event_sdl2;
         handle_display = display_sdl2;
-    } else if(argc == 1 || (argc == 2 && strcmp(argv[1],"--console") == 0)){
+    } else if(isConsole){
         handle_event = event;
         handle_display = display;
+    } else if(isEditor){
+        sdl_init();
+        handle_event = event_editor;
+        handle_display = display_editor;
     } else {
-        fprintf(stderr,"Usage : ./main [--console] OR [--sdl2]\n"
-                "Sans argument : Lance en mode console\n");
+        fprintf(stderr,"Usage : ./main [--console] OR [--sdl2] OR [--editor]\n"
+                "Sans argument : Lance en mode SDL2\n");
         return -1;
     }
     bool run = true;
@@ -49,17 +56,31 @@ int main(int argc, char** argv){
 			case None:{
 				break;
 			}
+            case Click:{
+                changeCase(&a);
+                handle_display(&a);
+                break;
+            }
+            case Save:{
+                fprintf(stdout,"File name: ");
+                char file_name[256];
+                fgets(file_name,256,stdin);
+                file_name[strcspn(file_name, "\n")] = 0;
+                createGridFile(file_name,a);
+                run=false;
+                break;
+            }
             default:
                 move_player(&a,entry);
                 break;
         }
 	    if(checkFinish(&a)){
             handle_display(&a);
-            if(isSDL) sdl_quit();
 	        fprintf(stdout,"Bravo vous avez gagné !\n");
 	        run=false;
 	    }
     }
+    if(isSDL || isEditor) sdl_quit();
 	freeGrid(&a);
     return 0;
 }

@@ -34,7 +34,9 @@ enum Event{
     Right, ///< Aller à droite
     Top, ///< Aller en haut
     Bottom, ///< Aller en base
-    None ///< Ne rien faire
+    None, ///< Ne rien faire
+    Click, //< Clic souris
+    Save, //< sauvegarde de la grille
 };
 
 

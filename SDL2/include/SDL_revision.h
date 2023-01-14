@@ -1,2 +1,2 @@
-#define SDL_REVISION "git@git.unistra.fr:a.franz/techdev-sokoban-franz.git@1c496a55d4d4c5229900b71b7ad93cc75515e614"
+#define SDL_REVISION "https://github.com/AxelFranz/sokoban-plus-editor.git@f61b10b45da4e9faa87de36efd089400a0cfa054"
 #define SDL_REVISION_NUMBER 0
