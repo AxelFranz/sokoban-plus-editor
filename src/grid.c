@@ -134,3 +134,45 @@ int getGoalNumber(Grid g){
     }
     return count;
 }
+
+Grid initNewGrid(){
+    Grid a_r;
+    int number_row;
+    int number_column;
+    fprintf(stdout,"Nombre de lignes : ");
+    scanf("%d",&number_row);
+    fprintf(stdout,"Nombre de colonnes : ");
+    scanf("%d",&number_column);
+
+    if((0 >= number_row) || (0 >= number_column) ){
+        fprintf(stderr,"Il faut que le nombre de lignes et de colonnes soit strictement positif\n");
+        exit(1);
+    }
+    a_r.row_number = number_row;
+	a_r.column_number = number_column;
+	a_r.goal_number = 0;
+    a_r.goals = NULL;
+	a_r.game_grid = malloc((number_row)*sizeof(enum CaseType*));
+	if (a_r.game_grid == NULL) exit(1);
+	
+    for (int i = 0; i < number_row; i++){
+        a_r.game_grid[i] = malloc((number_column)*sizeof(enum CaseType));
+    	if (a_r.game_grid[i] == NULL) exit(1);
+        if(i == 0 || i == number_row-1){
+            for(int j = 0; j < number_column; j++){
+                Position p = {.x  = j, .y = i};
+                setPosCell(&a_r,p,WALL);
+            }
+        } else {
+            for(int j = 0; j < number_column;j++){
+                Position p = {.x = j, .y = i};
+                if(j == 0 || j == number_column-1){
+                    setPosCell(&a_r,p,WALL);
+                } else {
+                    setPosCell(&a_r,p,NONE);
+                }
+            }
+	    }
+    }
+    return a_r;
+}
