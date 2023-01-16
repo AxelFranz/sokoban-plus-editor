@@ -31,11 +31,11 @@ int main(int argc, char** argv){
         sdl_init();
         handle_event = event_sdl2;
         handle_display = display_sdl2;
-        a = init_level("level1.txt");
+        a = init_level("levels/level1.txt");
     } else if(isConsole){
         handle_event = event;
         handle_display = display;
-        a = init_level("level1.txt");
+        a = init_level("levels/level1.txt");
     } else if(isEditor){
         a = initNewGrid();
         sdl_init();

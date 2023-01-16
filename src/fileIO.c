@@ -45,14 +45,16 @@ void fappendChar(const char* file_name, const char c){
 }
 
 void createGridFile(const char* file_name, Grid g){
+    char new_path[256];
+    snprintf(new_path,256,"levels/%s",file_name);
     char info[256];
     snprintf(info,sizeof(info),"%d %d %d\n",g.column_number,g.row_number,getGoalNumber(g)); 
-    fprintString(file_name,info);
+    fprintString(new_path,info);
     Position pos;
     for(pos.y = 0; pos.y < g.row_number; pos.y++){
         for(pos.x =  0; pos.x < g.column_number; pos.x++){
-            fappendChar(file_name,checkCase(g,pos));
+            fappendChar(new_path,checkCase(g,pos));
         }
-        fappendChar(file_name,'\n');
+        fappendChar(new_path,'\n');
     }
 }
