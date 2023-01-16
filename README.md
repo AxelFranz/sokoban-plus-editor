@@ -21,7 +21,19 @@ Les fuites de mémoires présentes dans la version graphique viennent de SDL2 et
 Options de lancement :
     * --sdl2 : Pour jouer en mode graphique
     * --console : Pour jouer en mode console
+    * --editor : Lance l'editeur de niveaux (en mode graphique)
     * Sans argument : Mode console par défaut
+```
+<br/>
+```
+Commandes : 
+    * En mode jeu (non-editeur) 
+        - (hjkl) : (Gauche,Bas,Haut,Droite)
+    * En mode editeur
+        - Clic souris : Changer la case
+        - w : Sauvegarder le niveau (interaction dans le terminal)
+    * Communes : 
+        - q : Quitter le jeu
 ```
 <br/>
 Utilisation du jeu : 
