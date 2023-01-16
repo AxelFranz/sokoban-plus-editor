@@ -24,7 +24,9 @@ Options de lancement :
     * --editor : Lance l'editeur de niveaux (en mode graphique)
     * Sans argument : Mode console par défaut
 ```
-<br/>
+Dépendances :
+* [SDL2](https://github.com/libsdl-org/SDL) 
+
 ```
 Commandes : 
     * En mode jeu (non-editeur) 
