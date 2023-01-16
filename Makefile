@@ -1,4 +1,4 @@
-CFLAGS= -Wall -Wextra
+CFLAGS= -Wall -Wextra -g
 INCFLAGS= -I include/
 OBJPATH=obj/
 CSTD = -std=c11

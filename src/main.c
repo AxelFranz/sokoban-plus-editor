@@ -21,19 +21,23 @@ int main(int argc, char** argv){
     bool isSDL = argc == 1 ||(argc == 2 && strcmp(argv[1],"--sdl2") == 0);
     bool isEditor = argc == 2 && strcmp(argv[1],"--editor") == 0;
     bool isConsole = argc == 2 && strcmp(argv[1],"--console") == 0;
-
+    bool isGame = isSDL || isConsole;
     enum Event(*handle_event)();
     void (*handle_display)(Grid*);
+    Grid a;
 
     // On check les arguments
     if(isSDL){
         sdl_init();
         handle_event = event_sdl2;
         handle_display = display_sdl2;
+        a = init_level("level1.txt");
     } else if(isConsole){
         handle_event = event;
         handle_display = display;
+        a = init_level("level1.txt");
     } else if(isEditor){
+        a = initNewGrid();
         sdl_init();
         handle_event = event_editor;
         handle_display = display_editor;
@@ -43,7 +47,6 @@ int main(int argc, char** argv){
         return -1;
     }
     bool run = true;
-	Grid a = init_level("level1.txt");
 
     while(run){
         handle_display(&a);
@@ -64,8 +67,9 @@ int main(int argc, char** argv){
             case Save:{
                 fprintf(stdout,"File name: ");
                 char file_name[256];
-                fgets(file_name,256,stdin);
+                scanf(" %255[^\n]", file_name);
                 file_name[strcspn(file_name, "\n")] = 0;
+                fprintf(stdout,"%s\n",file_name);
                 createGridFile(file_name,a);
                 run=false;
                 break;
@@ -74,7 +78,7 @@ int main(int argc, char** argv){
                 move_player(&a,entry);
                 break;
         }
-	    if(checkFinish(&a)){
+	    if(isGame && checkFinish(&a)){
             handle_display(&a);
 	        fprintf(stdout,"Bravo vous avez gagné !\n");
 	        run=false;
