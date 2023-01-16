@@ -4,10 +4,10 @@ build/SDL_sysjoystick.lo: \
  /home/axel/techdev-sokoban-franz/SDL2/src/joystick/linux/../../dynapi/SDL_dynapi.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/joystick/linux/../../dynapi/SDL_dynapi_overrides.h \
  include/SDL_config.h include/SDL_platform.h include/begin_code.h \
- include/close_code.h include/SDL_assert.h include/SDL_config.h \
- include/SDL_log.h include/SDL_stdinc.h include/SDL_hints.h \
- include/SDL_joystick.h include/SDL_error.h include/SDL_endian.h \
- include/SDL_timer.h \
+ include/close_code.h include/SDL_assert.h include/SDL_stdinc.h \
+ include/SDL_config.h include/SDL_log.h include/SDL_hints.h \
+ include/SDL_joystick.h include/SDL_error.h include/SDL_guid.h \
+ include/SDL_endian.h include/SDL_timer.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/joystick/linux/../../events/SDL_events_c.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/joystick/linux/../../events/../SDL_internal.h \
  include/SDL_events.h include/SDL_video.h include/SDL_pixels.h \
@@ -59,4 +59,5 @@ build/SDL_sysjoystick.lo: \
  /home/axel/techdev-sokoban-franz/SDL2/src/joystick/linux/../../core/linux/SDL_evdev_capabilities.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/joystick/linux/../../core/linux/../../SDL_internal.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/joystick/linux/../../core/linux/SDL_udev.h \
- include/SDL_loadso.h
+ include/SDL_loadso.h \
+ /home/axel/techdev-sokoban-franz/SDL2/src/joystick/linux/../../core/linux/SDL_sandbox.h

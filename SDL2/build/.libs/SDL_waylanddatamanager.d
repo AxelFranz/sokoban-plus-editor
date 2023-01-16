@@ -4,8 +4,8 @@ build/SDL_waylanddatamanager.lo: \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../dynapi/SDL_dynapi.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../dynapi/SDL_dynapi_overrides.h \
  include/SDL_config.h include/SDL_platform.h include/begin_code.h \
- include/close_code.h include/SDL_assert.h include/SDL_config.h \
- include/SDL_log.h include/SDL_stdinc.h include/SDL_stdinc.h \
+ include/close_code.h include/SDL_assert.h include/SDL_stdinc.h \
+ include/SDL_config.h include/SDL_log.h include/SDL_stdinc.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../core/unix/SDL_poll.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../core/unix/../../SDL_internal.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandvideo.h \
@@ -61,4 +61,5 @@ build/SDL_waylanddatamanager.lo: \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../events/../../include/SDL_error.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../events/../../include/SDL_video.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../events/../../include/begin_code.h \
- /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../events/../../include/close_code.h
+ /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../events/../../include/close_code.h \
+ gen/primary-selection-unstable-v1-client-protocol.h

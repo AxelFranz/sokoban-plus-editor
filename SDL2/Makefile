@@ -11,17 +11,18 @@ libdir  = ${exec_prefix}/lib
 includedir = ${prefix}/include
 datarootdir = ${prefix}/share
 datadir	= ${datarootdir}
-auxdir	= build-scripts
+auxdir	= ./build-scripts/
 distpath = $(srcdir)/..
-distdir = SDL2-2.0.20
+distdir = SDL2-2.26.2
 distfile = $(distdir).tar.gz
 
 
 SHELL	= /bin/sh
 CC      = gcc
+CXX     = g++
 INCLUDE = -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos
 CFLAGS  = -g -O3 -DUSING_GENERATED_CONFIG_H
-EXTRA_CFLAGS = -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos  -mmmx -m3dnow -msse -msse2 -msse3 -Wall -fno-strict-aliasing -fvisibility=hidden -Wdeclaration-after-statement -Werror=declaration-after-statement  -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -D_REENTRANT  -D_REENTRANT    -I/usr/include/libdrm    -I$(gen) -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include  -I/usr/include/ibus-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-4 -I/usr/include/libmount -I/usr/include/blkid -pthread  -D_REENTRANT -DHAVE_LINUX_VERSION_H
+EXTRA_CFLAGS = -Iinclude -I/home/axel/techdev-sokoban-franz/SDL2/include -idirafter /home/axel/techdev-sokoban-franz/SDL2/src/video/khronos  -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=26 -DSDL_BUILD_MICRO_VERSION=2 -mmmx -m3dnow -msse -msse2 -msse3 -Wall -fno-strict-aliasing -fvisibility=hidden -Wdeclaration-after-statement -Werror=declaration-after-statement  -I/usr/include/pipewire-0.3 -I/usr/include/spa-0.2 -D_REENTRANT  -D_REENTRANT    -I/usr/include/libdrm    -I$(gen) -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include  -I/usr/include/ibus-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-4 -I/usr/include/libmount -I/usr/include/blkid -pthread  -D_REENTRANT -DHAVE_LINUX_VERSION_H
 LDFLAGS =  -Wl,--no-undefined
 EXTRA_LDFLAGS =  -lm -lpthread -lrt
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
@@ -31,11 +32,12 @@ RANLIB	= ranlib
 RC	= 
 LINKER = $(CC)
 LIBTOOLLINKERTAG = CC
+SDL_VENDOR_INFO = 
 
 TARGET  = libSDL2.la
-OBJECTS = $(objects)/SDL.lo $(objects)/SDL_assert.lo $(objects)/SDL_dataqueue.lo $(objects)/SDL_error.lo $(objects)/SDL_hints.lo $(objects)/SDL_log.lo $(objects)/SDL_atomic.lo $(objects)/SDL_spinlock.lo $(objects)/SDL_audio.lo $(objects)/SDL_audiocvt.lo $(objects)/SDL_audiodev.lo $(objects)/SDL_audiotypecvt.lo $(objects)/SDL_mixer.lo $(objects)/SDL_wave.lo $(objects)/SDL_cpuinfo.lo $(objects)/SDL_dynapi.lo $(objects)/SDL_clipboardevents.lo $(objects)/SDL_displayevents.lo $(objects)/SDL_dropevents.lo $(objects)/SDL_events.lo $(objects)/SDL_gesture.lo $(objects)/SDL_keyboard.lo $(objects)/SDL_mouse.lo $(objects)/SDL_quit.lo $(objects)/SDL_touch.lo $(objects)/SDL_windowevents.lo $(objects)/imKStoUCS.lo $(objects)/SDL_rwops.lo $(objects)/SDL_haptic.lo $(objects)/SDL_hidapi.lo $(objects)/SDL_gamecontroller.lo $(objects)/SDL_joystick.lo $(objects)/e_atan2.lo $(objects)/e_exp.lo $(objects)/e_fmod.lo $(objects)/e_log.lo $(objects)/e_log10.lo $(objects)/e_pow.lo $(objects)/e_rem_pio2.lo $(objects)/e_sqrt.lo $(objects)/k_cos.lo $(objects)/k_rem_pio2.lo $(objects)/k_sin.lo $(objects)/k_tan.lo $(objects)/s_atan.lo $(objects)/s_copysign.lo $(objects)/s_cos.lo $(objects)/s_fabs.lo $(objects)/s_floor.lo $(objects)/s_scalbn.lo $(objects)/s_sin.lo $(objects)/s_tan.lo $(objects)/SDL_url.lo $(objects)/SDL_power.lo $(objects)/SDL_d3dmath.lo $(objects)/SDL_render.lo $(objects)/SDL_yuv_sw.lo $(objects)/SDL_render_d3d.lo $(objects)/SDL_shaders_d3d.lo $(objects)/SDL_render_d3d11.lo $(objects)/SDL_shaders_d3d11.lo $(objects)/SDL_render_gl.lo $(objects)/SDL_shaders_gl.lo $(objects)/SDL_render_gles.lo $(objects)/SDL_render_gles2.lo $(objects)/SDL_shaders_gles2.lo $(objects)/SDL_render_psp.lo $(objects)/SDL_blendfillrect.lo $(objects)/SDL_blendline.lo $(objects)/SDL_blendpoint.lo $(objects)/SDL_drawline.lo $(objects)/SDL_drawpoint.lo $(objects)/SDL_render_sw.lo $(objects)/SDL_rotate.lo $(objects)/SDL_triangle.lo $(objects)/SDL_render_vita_gxm.lo $(objects)/SDL_render_vita_gxm_memory.lo $(objects)/SDL_render_vita_gxm_tools.lo $(objects)/SDL_sensor.lo $(objects)/SDL_crc32.lo $(objects)/SDL_getenv.lo $(objects)/SDL_iconv.lo $(objects)/SDL_malloc.lo $(objects)/SDL_qsort.lo $(objects)/SDL_stdlib.lo $(objects)/SDL_string.lo $(objects)/SDL_strtokr.lo $(objects)/SDL_thread.lo $(objects)/SDL_timer.lo $(objects)/SDL_RLEaccel.lo $(objects)/SDL_blit.lo $(objects)/SDL_blit_0.lo $(objects)/SDL_blit_1.lo $(objects)/SDL_blit_A.lo $(objects)/SDL_blit_N.lo $(objects)/SDL_blit_auto.lo $(objects)/SDL_blit_copy.lo $(objects)/SDL_blit_slow.lo $(objects)/SDL_bmp.lo $(objects)/SDL_clipboard.lo $(objects)/SDL_egl.lo $(objects)/SDL_fillrect.lo $(objects)/SDL_pixels.lo $(objects)/SDL_rect.lo $(objects)/SDL_shape.lo $(objects)/SDL_stretch.lo $(objects)/SDL_surface.lo $(objects)/SDL_video.lo $(objects)/SDL_vulkan_utils.lo $(objects)/SDL_yuv.lo $(objects)/yuv_rgb.lo $(objects)/SDL_locale.lo $(objects)/SDL_nullevents.lo $(objects)/SDL_nullframebuffer.lo $(objects)/SDL_nullvideo.lo $(objects)/SDL_diskaudio.lo $(objects)/SDL_dummyaudio.lo $(objects)/SDL_sysloadso.lo $(objects)/SDL_dspaudio.lo $(objects)/SDL_alsa_audio.lo $(objects)/SDL_pipewire.lo $(objects)/SDL_pulseaudio.lo $(objects)/SDL_jackaudio.lo $(objects)/SDL_x11clipboard.lo $(objects)/SDL_x11dyn.lo $(objects)/SDL_x11events.lo $(objects)/SDL_x11framebuffer.lo $(objects)/SDL_x11keyboard.lo $(objects)/SDL_x11messagebox.lo $(objects)/SDL_x11modes.lo $(objects)/SDL_x11mouse.lo $(objects)/SDL_x11opengl.lo $(objects)/SDL_x11opengles.lo $(objects)/SDL_x11shape.lo $(objects)/SDL_x11touch.lo $(objects)/SDL_x11video.lo $(objects)/SDL_x11vulkan.lo $(objects)/SDL_x11window.lo $(objects)/SDL_x11xfixes.lo $(objects)/SDL_x11xinput2.lo $(objects)/edid-parse.lo $(objects)/SDL_kmsdrmdyn.lo $(objects)/SDL_kmsdrmevents.lo $(objects)/SDL_kmsdrmmouse.lo $(objects)/SDL_kmsdrmopengles.lo $(objects)/SDL_kmsdrmvideo.lo $(objects)/SDL_kmsdrmvulkan.lo $(objects)/SDL_waylandclipboard.lo $(objects)/SDL_waylanddatamanager.lo $(objects)/SDL_waylanddyn.lo $(objects)/SDL_waylandevents.lo $(objects)/SDL_waylandkeyboard.lo $(objects)/SDL_waylandmessagebox.lo $(objects)/SDL_waylandmouse.lo $(objects)/SDL_waylandopengles.lo $(objects)/SDL_waylandtouch.lo $(objects)/SDL_waylandvideo.lo $(objects)/SDL_waylandvulkan.lo $(objects)/SDL_waylandwindow.lo $(objects)/SDL_dbus.lo $(objects)/SDL_ime.lo $(objects)/SDL_ibus.lo $(objects)/SDL_fcitx.lo $(objects)/SDL_hidapi_gamecube.lo $(objects)/SDL_hidapi_luna.lo $(objects)/SDL_hidapi_ps4.lo $(objects)/SDL_hidapi_ps5.lo $(objects)/SDL_hidapi_rumble.lo $(objects)/SDL_hidapi_stadia.lo $(objects)/SDL_hidapi_steam.lo $(objects)/SDL_hidapi_switch.lo $(objects)/SDL_hidapi_xbox360.lo $(objects)/SDL_hidapi_xbox360w.lo $(objects)/SDL_hidapi_xboxone.lo $(objects)/SDL_hidapijoystick.lo $(objects)/SDL_systhread.lo $(objects)/SDL_syssem.lo $(objects)/SDL_sysmutex.lo $(objects)/SDL_syscond.lo $(objects)/SDL_systls.lo $(objects)/SDL_sysurl.lo $(objects)/SDL_syslocale.lo $(objects)/SDL_sysjoystick.lo $(objects)/SDL_steamcontroller.lo $(objects)/SDL_syshaptic.lo $(objects)/SDL_syspower.lo $(objects)/SDL_sysfilesystem.lo $(objects)/SDL_systimer.lo $(objects)/SDL_udev.lo $(objects)/SDL_evdev.lo $(objects)/SDL_evdev_kbd.lo $(objects)/SDL_evdev_kbd_freebsd.lo $(objects)/SDL_evdev_capabilities.lo $(objects)/SDL_threadprio.lo $(objects)/SDL_poll.lo $(objects)/SDL_virtualjoystick.lo $(objects)/SDL_dummysensor.lo
-GEN_HEADERS =  $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h 
-GEN_OBJECTS =  $(objects)/idle-inhibit-unstable-v1-protocol.lo $(objects)/keyboard-shortcuts-inhibit-unstable-v1-protocol.lo $(objects)/pointer-constraints-unstable-v1-protocol.lo $(objects)/relative-pointer-unstable-v1-protocol.lo $(objects)/text-input-unstable-v3-protocol.lo $(objects)/wayland-protocol.lo $(objects)/xdg-activation-v1-protocol.lo $(objects)/xdg-decoration-unstable-v1-protocol.lo $(objects)/xdg-shell-protocol.lo 
+OBJECTS = $(objects)/SDL.lo $(objects)/SDL_assert.lo $(objects)/SDL_dataqueue.lo $(objects)/SDL_error.lo $(objects)/SDL_guid.lo $(objects)/SDL_hints.lo $(objects)/SDL_list.lo $(objects)/SDL_log.lo $(objects)/SDL_utils.lo $(objects)/SDL_atomic.lo $(objects)/SDL_spinlock.lo $(objects)/SDL_audio.lo $(objects)/SDL_audiocvt.lo $(objects)/SDL_audiodev.lo $(objects)/SDL_audiotypecvt.lo $(objects)/SDL_mixer.lo $(objects)/SDL_wave.lo $(objects)/SDL_cpuinfo.lo $(objects)/SDL_dynapi.lo $(objects)/SDL_clipboardevents.lo $(objects)/SDL_displayevents.lo $(objects)/SDL_dropevents.lo $(objects)/SDL_events.lo $(objects)/SDL_gesture.lo $(objects)/SDL_keyboard.lo $(objects)/SDL_keysym_to_scancode.lo $(objects)/SDL_mouse.lo $(objects)/SDL_quit.lo $(objects)/SDL_scancode_tables.lo $(objects)/SDL_touch.lo $(objects)/SDL_windowevents.lo $(objects)/imKStoUCS.lo $(objects)/SDL_rwops.lo $(objects)/SDL_haptic.lo $(objects)/SDL_hidapi.lo $(objects)/SDL_gamecontroller.lo $(objects)/SDL_joystick.lo $(objects)/controller_type.lo $(objects)/e_atan2.lo $(objects)/e_exp.lo $(objects)/e_fmod.lo $(objects)/e_log.lo $(objects)/e_log10.lo $(objects)/e_pow.lo $(objects)/e_rem_pio2.lo $(objects)/e_sqrt.lo $(objects)/k_cos.lo $(objects)/k_rem_pio2.lo $(objects)/k_sin.lo $(objects)/k_tan.lo $(objects)/s_atan.lo $(objects)/s_copysign.lo $(objects)/s_cos.lo $(objects)/s_fabs.lo $(objects)/s_floor.lo $(objects)/s_scalbn.lo $(objects)/s_sin.lo $(objects)/s_tan.lo $(objects)/SDL_url.lo $(objects)/SDL_power.lo $(objects)/SDL_d3dmath.lo $(objects)/SDL_render.lo $(objects)/SDL_yuv_sw.lo $(objects)/SDL_render_d3d.lo $(objects)/SDL_shaders_d3d.lo $(objects)/SDL_render_d3d11.lo $(objects)/SDL_shaders_d3d11.lo $(objects)/SDL_render_d3d12.lo $(objects)/SDL_shaders_d3d12.lo $(objects)/SDL_render_gl.lo $(objects)/SDL_shaders_gl.lo $(objects)/SDL_render_gles.lo $(objects)/SDL_render_gles2.lo $(objects)/SDL_shaders_gles2.lo $(objects)/SDL_render_ps2.lo $(objects)/SDL_render_psp.lo $(objects)/SDL_blendfillrect.lo $(objects)/SDL_blendline.lo $(objects)/SDL_blendpoint.lo $(objects)/SDL_drawline.lo $(objects)/SDL_drawpoint.lo $(objects)/SDL_render_sw.lo $(objects)/SDL_rotate.lo $(objects)/SDL_triangle.lo $(objects)/SDL_render_vita_gxm.lo $(objects)/SDL_render_vita_gxm_memory.lo $(objects)/SDL_render_vita_gxm_tools.lo $(objects)/SDL_sensor.lo $(objects)/SDL_crc16.lo $(objects)/SDL_crc32.lo $(objects)/SDL_getenv.lo $(objects)/SDL_iconv.lo $(objects)/SDL_malloc.lo $(objects)/SDL_mslibc.lo $(objects)/SDL_qsort.lo $(objects)/SDL_stdlib.lo $(objects)/SDL_string.lo $(objects)/SDL_strtokr.lo $(objects)/SDL_thread.lo $(objects)/SDL_timer.lo $(objects)/SDL_RLEaccel.lo $(objects)/SDL_blit.lo $(objects)/SDL_blit_0.lo $(objects)/SDL_blit_1.lo $(objects)/SDL_blit_A.lo $(objects)/SDL_blit_N.lo $(objects)/SDL_blit_auto.lo $(objects)/SDL_blit_copy.lo $(objects)/SDL_blit_slow.lo $(objects)/SDL_bmp.lo $(objects)/SDL_clipboard.lo $(objects)/SDL_egl.lo $(objects)/SDL_fillrect.lo $(objects)/SDL_pixels.lo $(objects)/SDL_rect.lo $(objects)/SDL_shape.lo $(objects)/SDL_stretch.lo $(objects)/SDL_surface.lo $(objects)/SDL_video.lo $(objects)/SDL_vulkan_utils.lo $(objects)/SDL_yuv.lo $(objects)/yuv_rgb.lo $(objects)/SDL_locale.lo $(objects)/SDL_nullevents.lo $(objects)/SDL_nullframebuffer.lo $(objects)/SDL_nullvideo.lo $(objects)/SDL_offscreenevents.lo $(objects)/SDL_offscreenframebuffer.lo $(objects)/SDL_offscreenopengles.lo $(objects)/SDL_offscreenvideo.lo $(objects)/SDL_offscreenwindow.lo $(objects)/SDL_diskaudio.lo $(objects)/SDL_dummyaudio.lo $(objects)/SDL_sysloadso.lo $(objects)/SDL_dspaudio.lo $(objects)/SDL_alsa_audio.lo $(objects)/SDL_pipewire.lo $(objects)/SDL_pulseaudio.lo $(objects)/SDL_jackaudio.lo $(objects)/SDL_x11clipboard.lo $(objects)/SDL_x11dyn.lo $(objects)/SDL_x11events.lo $(objects)/SDL_x11framebuffer.lo $(objects)/SDL_x11keyboard.lo $(objects)/SDL_x11messagebox.lo $(objects)/SDL_x11modes.lo $(objects)/SDL_x11mouse.lo $(objects)/SDL_x11opengl.lo $(objects)/SDL_x11opengles.lo $(objects)/SDL_x11shape.lo $(objects)/SDL_x11touch.lo $(objects)/SDL_x11video.lo $(objects)/SDL_x11vulkan.lo $(objects)/SDL_x11window.lo $(objects)/SDL_x11xfixes.lo $(objects)/SDL_x11xinput2.lo $(objects)/edid-parse.lo $(objects)/SDL_kmsdrmdyn.lo $(objects)/SDL_kmsdrmevents.lo $(objects)/SDL_kmsdrmmouse.lo $(objects)/SDL_kmsdrmopengles.lo $(objects)/SDL_kmsdrmvideo.lo $(objects)/SDL_kmsdrmvulkan.lo $(objects)/SDL_waylandclipboard.lo $(objects)/SDL_waylanddatamanager.lo $(objects)/SDL_waylanddyn.lo $(objects)/SDL_waylandevents.lo $(objects)/SDL_waylandkeyboard.lo $(objects)/SDL_waylandmessagebox.lo $(objects)/SDL_waylandmouse.lo $(objects)/SDL_waylandopengles.lo $(objects)/SDL_waylandtouch.lo $(objects)/SDL_waylandvideo.lo $(objects)/SDL_waylandvulkan.lo $(objects)/SDL_waylandwindow.lo $(objects)/SDL_dbus.lo $(objects)/SDL_ime.lo $(objects)/SDL_ibus.lo $(objects)/SDL_fcitx.lo $(objects)/SDL_hidapi_combined.lo $(objects)/SDL_hidapi_gamecube.lo $(objects)/SDL_hidapi_luna.lo $(objects)/SDL_hidapi_ps3.lo $(objects)/SDL_hidapi_ps4.lo $(objects)/SDL_hidapi_ps5.lo $(objects)/SDL_hidapi_rumble.lo $(objects)/SDL_hidapi_shield.lo $(objects)/SDL_hidapi_stadia.lo $(objects)/SDL_hidapi_steam.lo $(objects)/SDL_hidapi_switch.lo $(objects)/SDL_hidapi_wii.lo $(objects)/SDL_hidapi_xbox360.lo $(objects)/SDL_hidapi_xbox360w.lo $(objects)/SDL_hidapi_xboxone.lo $(objects)/SDL_hidapijoystick.lo $(objects)/SDL_systhread.lo $(objects)/SDL_syssem.lo $(objects)/SDL_sysmutex.lo $(objects)/SDL_syscond.lo $(objects)/SDL_systls.lo $(objects)/SDL_sysurl.lo $(objects)/SDL_syslocale.lo $(objects)/SDL_sysjoystick.lo $(objects)/SDL_steamcontroller.lo $(objects)/SDL_syshaptic.lo $(objects)/SDL_syspower.lo $(objects)/SDL_sysfilesystem.lo $(objects)/SDL_systimer.lo $(objects)/SDL_udev.lo $(objects)/SDL_evdev.lo $(objects)/SDL_evdev_kbd.lo $(objects)/SDL_evdev_kbd_freebsd.lo $(objects)/SDL_evdev_capabilities.lo $(objects)/SDL_threadprio.lo $(objects)/SDL_sandbox.lo $(objects)/SDL_poll.lo $(objects)/SDL_virtualjoystick.lo $(objects)/SDL_dummysensor.lo
+GEN_HEADERS =  $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h 
+GEN_OBJECTS =  $(objects)/idle-inhibit-unstable-v1-protocol.lo $(objects)/keyboard-shortcuts-inhibit-unstable-v1-protocol.lo $(objects)/pointer-constraints-unstable-v1-protocol.lo $(objects)/primary-selection-unstable-v1-protocol.lo $(objects)/relative-pointer-unstable-v1-protocol.lo $(objects)/tablet-unstable-v2-protocol.lo $(objects)/text-input-unstable-v3-protocol.lo $(objects)/viewporter-protocol.lo $(objects)/wayland-protocol.lo $(objects)/xdg-activation-v1-protocol.lo $(objects)/xdg-decoration-unstable-v1-protocol.lo $(objects)/xdg-output-unstable-v1-protocol.lo $(objects)/xdg-shell-protocol.lo 
 VERSION_OBJECTS = 
 
 SDLMAIN_TARGET = libSDL2main.la
@@ -49,7 +51,7 @@ WAYLAND_SCANNER_CODE_MODE = private-code
 
 INSTALL_SDL2_CONFIG = TRUE
 
-SRC_DIST = *.md *.txt acinclude Android.mk autogen.sh android-project build-scripts cmake cmake_uninstall.cmake.in configure configure.ac debian docs include Makefile.* sdl2-config.cmake.in sdl2-config-version.cmake.in sdl2-config.in sdl2.m4 sdl2.pc.in SDL2.spec.in SDL2Config.cmake src test VisualC VisualC-WinRT Xcode Xcode-iOS wayland-protocols
+SRC_DIST = *.md *.txt acinclude Android.mk autogen.sh android-project build-scripts cmake cmake_uninstall.cmake.in configure configure.ac docs include Makefile.* mingw sdl2-config.cmake.in sdl2-config-version.cmake.in sdl2-config.in sdl2.m4 sdl2.pc.in SDL2.spec.in SDL2Config.cmake.in src test VisualC VisualC-WinRT Xcode Xcode-iOS wayland-protocols
 GEN_DIST = SDL2.spec
 
 ifneq ($V,1)
@@ -79,6 +81,7 @@ HDRS = \
 	SDL_filesystem.h \
 	SDL_gamecontroller.h \
 	SDL_gesture.h \
+	SDL_guid.h \
 	SDL_haptic.h \
 	SDL_hidapi.h \
 	SDL_hints.h \
@@ -129,8 +132,8 @@ HDRS = \
 
 SDLTEST_HDRS = $(shell ls $(srcdir)/include | fgrep SDL_test)
 
-LT_AGE      = 18
-LT_CURRENT  = 18
+LT_AGE      = 2600
+LT_CURRENT  = 2600
 LT_RELEASE  = 2.0
 LT_REVISION = 2
 LT_LDFLAGS  = -no-undefined -rpath $(libdir) -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
@@ -150,7 +153,7 @@ $(objects)/.created:
 	touch $@
 
 update-revision:
-	$(SHELL) $(auxdir)/updaterev.sh
+	$(SHELL) $(auxdir)/updaterev.sh --vendor "$(SDL_VENDOR_INFO)"
 
 .PHONY: all update-revision install install-bin install-hdrs install-lib install-data uninstall uninstall-bin uninstall-hdrs uninstall-lib uninstall-data clean distclean dist $(OBJECTS:.lo=.d)
 
@@ -250,7 +253,8 @@ dist $(distfile):
 	    -name '.#*' \) \
 	    -exec rm -f {} \;
 	if test -f $(distdir)/test/Makefile; then (cd $(distdir)/test && make distclean); fi
-	(cd $(distdir); build-scripts/updaterev.sh)
+	# Intentionally no vendor suffix: that's a property of the build, not the source
+	(cd $(distdir); $(srcdir)/build-scripts/updaterev.sh --dist)
 	tar cvf - $(distdir) | gzip --best >$(distfile)
 	rm -rf $(distdir)
 
@@ -275,10 +279,19 @@ $(objects)/SDL_dataqueue.lo: /home/axel/techdev-sokoban-franz/SDL2/src/SDL_dataq
 $(objects)/SDL_error.lo: /home/axel/techdev-sokoban-franz/SDL2/src/SDL_error.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
+$(objects)/SDL_guid.lo: /home/axel/techdev-sokoban-franz/SDL2/src/SDL_guid.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
 $(objects)/SDL_hints.lo: /home/axel/techdev-sokoban-franz/SDL2/src/SDL_hints.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
+$(objects)/SDL_list.lo: /home/axel/techdev-sokoban-franz/SDL2/src/SDL_list.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
 $(objects)/SDL_log.lo: /home/axel/techdev-sokoban-franz/SDL2/src/SDL_log.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_utils.lo: /home/axel/techdev-sokoban-franz/SDL2/src/SDL_utils.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_atomic.lo: /home/axel/techdev-sokoban-franz/SDL2/src/atomic/SDL_atomic.c $(objects)/.created
@@ -329,10 +342,16 @@ $(objects)/SDL_gesture.lo: /home/axel/techdev-sokoban-franz/SDL2/src/events/SDL_
 $(objects)/SDL_keyboard.lo: /home/axel/techdev-sokoban-franz/SDL2/src/events/SDL_keyboard.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
+$(objects)/SDL_keysym_to_scancode.lo: /home/axel/techdev-sokoban-franz/SDL2/src/events/SDL_keysym_to_scancode.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
 $(objects)/SDL_mouse.lo: /home/axel/techdev-sokoban-franz/SDL2/src/events/SDL_mouse.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_quit.lo: /home/axel/techdev-sokoban-franz/SDL2/src/events/SDL_quit.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_scancode_tables.lo: /home/axel/techdev-sokoban-franz/SDL2/src/events/SDL_scancode_tables.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_touch.lo: /home/axel/techdev-sokoban-franz/SDL2/src/events/SDL_touch.c $(objects)/.created
@@ -357,6 +376,9 @@ $(objects)/SDL_gamecontroller.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joys
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_joystick.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/SDL_joystick.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/controller_type.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/controller_type.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/e_atan2.lo: /home/axel/techdev-sokoban-franz/SDL2/src/libm/e_atan2.c $(objects)/.created
@@ -446,6 +468,12 @@ $(objects)/SDL_render_d3d11.lo: /home/axel/techdev-sokoban-franz/SDL2/src/render
 $(objects)/SDL_shaders_d3d11.lo: /home/axel/techdev-sokoban-franz/SDL2/src/render/direct3d11/SDL_shaders_d3d11.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
+$(objects)/SDL_render_d3d12.lo: /home/axel/techdev-sokoban-franz/SDL2/src/render/direct3d12/SDL_render_d3d12.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_shaders_d3d12.lo: /home/axel/techdev-sokoban-franz/SDL2/src/render/direct3d12/SDL_shaders_d3d12.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
 $(objects)/SDL_render_gl.lo: /home/axel/techdev-sokoban-franz/SDL2/src/render/opengl/SDL_render_gl.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
@@ -459,6 +487,9 @@ $(objects)/SDL_render_gles2.lo: /home/axel/techdev-sokoban-franz/SDL2/src/render
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_shaders_gles2.lo: /home/axel/techdev-sokoban-franz/SDL2/src/render/opengles2/SDL_shaders_gles2.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_render_ps2.lo: /home/axel/techdev-sokoban-franz/SDL2/src/render/ps2/SDL_render_ps2.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_render_psp.lo: /home/axel/techdev-sokoban-franz/SDL2/src/render/psp/SDL_render_psp.c $(objects)/.created
@@ -500,6 +531,9 @@ $(objects)/SDL_render_vita_gxm_tools.lo: /home/axel/techdev-sokoban-franz/SDL2/s
 $(objects)/SDL_sensor.lo: /home/axel/techdev-sokoban-franz/SDL2/src/sensor/SDL_sensor.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
+$(objects)/SDL_crc16.lo: /home/axel/techdev-sokoban-franz/SDL2/src/stdlib/SDL_crc16.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
 $(objects)/SDL_crc32.lo: /home/axel/techdev-sokoban-franz/SDL2/src/stdlib/SDL_crc32.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
@@ -510,6 +544,9 @@ $(objects)/SDL_iconv.lo: /home/axel/techdev-sokoban-franz/SDL2/src/stdlib/SDL_ic
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_malloc.lo: /home/axel/techdev-sokoban-franz/SDL2/src/stdlib/SDL_malloc.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_mslibc.lo: /home/axel/techdev-sokoban-franz/SDL2/src/stdlib/SDL_mslibc.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_qsort.lo: /home/axel/techdev-sokoban-franz/SDL2/src/stdlib/SDL_qsort.c $(objects)/.created
@@ -606,6 +643,21 @@ $(objects)/SDL_nullframebuffer.lo: /home/axel/techdev-sokoban-franz/SDL2/src/vid
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_nullvideo.lo: /home/axel/techdev-sokoban-franz/SDL2/src/video/dummy/SDL_nullvideo.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_offscreenevents.lo: /home/axel/techdev-sokoban-franz/SDL2/src/video/offscreen/SDL_offscreenevents.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_offscreenframebuffer.lo: /home/axel/techdev-sokoban-franz/SDL2/src/video/offscreen/SDL_offscreenframebuffer.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_offscreenopengles.lo: /home/axel/techdev-sokoban-franz/SDL2/src/video/offscreen/SDL_offscreenopengles.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_offscreenvideo.lo: /home/axel/techdev-sokoban-franz/SDL2/src/video/offscreen/SDL_offscreenvideo.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_offscreenwindow.lo: /home/axel/techdev-sokoban-franz/SDL2/src/video/offscreen/SDL_offscreenwindow.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_diskaudio.lo: /home/axel/techdev-sokoban-franz/SDL2/src/audio/disk/SDL_diskaudio.c $(objects)/.created
@@ -752,10 +804,16 @@ $(objects)/SDL_ibus.lo: /home/axel/techdev-sokoban-franz/SDL2/src/core/linux/SDL
 $(objects)/SDL_fcitx.lo: /home/axel/techdev-sokoban-franz/SDL2/src/core/linux/SDL_fcitx.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
+$(objects)/SDL_hidapi_combined.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/hidapi/SDL_hidapi_combined.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
 $(objects)/SDL_hidapi_gamecube.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/hidapi/SDL_hidapi_gamecube.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_hidapi_luna.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/hidapi/SDL_hidapi_luna.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_hidapi_ps3.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/hidapi/SDL_hidapi_ps3.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_hidapi_ps4.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/hidapi/SDL_hidapi_ps4.c $(objects)/.created
@@ -767,6 +825,9 @@ $(objects)/SDL_hidapi_ps5.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick
 $(objects)/SDL_hidapi_rumble.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/hidapi/SDL_hidapi_rumble.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
+$(objects)/SDL_hidapi_shield.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/hidapi/SDL_hidapi_shield.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
 $(objects)/SDL_hidapi_stadia.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/hidapi/SDL_hidapi_stadia.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
@@ -774,6 +835,9 @@ $(objects)/SDL_hidapi_steam.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joysti
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_hidapi_switch.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/hidapi/SDL_hidapi_switch.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_hidapi_wii.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/hidapi/SDL_hidapi_wii.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_hidapi_xbox360.lo: /home/axel/techdev-sokoban-franz/SDL2/src/joystick/hidapi/SDL_hidapi_xbox360.c $(objects)/.created
@@ -843,6 +907,9 @@ $(objects)/SDL_evdev_capabilities.lo: /home/axel/techdev-sokoban-franz/SDL2/src/
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_threadprio.lo: /home/axel/techdev-sokoban-franz/SDL2/src/core/linux/SDL_threadprio.c $(objects)/.created
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(objects)/SDL_sandbox.lo: /home/axel/techdev-sokoban-franz/SDL2/src/core/linux/SDL_sandbox.c $(objects)/.created
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
 $(objects)/SDL_poll.lo: /home/axel/techdev-sokoban-franz/SDL2/src/core/unix/SDL_poll.c $(objects)/.created
@@ -927,6 +994,18 @@ $(objects)/pointer-constraints-unstable-v1-protocol.lo: $(gen)/pointer-constrain
 	@$(SHELL) $(auxdir)/mkinstalldirs $(objects)
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
+$(gen)/primary-selection-unstable-v1-client-protocol.h: $(srcdir)/wayland-protocols/primary-selection-unstable-v1.xml
+	@$(SHELL) $(auxdir)/mkinstalldirs $(gen)
+	$(RUN_CMD_GEN)$(WAYLAND_SCANNER) client-header $< $@
+
+$(gen)/primary-selection-unstable-v1-protocol.c: $(srcdir)/wayland-protocols/primary-selection-unstable-v1.xml
+	@$(SHELL) $(auxdir)/mkinstalldirs $(gen)
+	$(RUN_CMD_GEN)$(WAYLAND_SCANNER) $(WAYLAND_SCANNER_CODE_MODE) $< $@
+
+$(objects)/primary-selection-unstable-v1-protocol.lo: $(gen)/primary-selection-unstable-v1-protocol.c $(gen)/primary-selection-unstable-v1-client-protocol.h
+	@$(SHELL) $(auxdir)/mkinstalldirs $(objects)
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
 $(gen)/relative-pointer-unstable-v1-client-protocol.h: $(srcdir)/wayland-protocols/relative-pointer-unstable-v1.xml
 	@$(SHELL) $(auxdir)/mkinstalldirs $(gen)
 	$(RUN_CMD_GEN)$(WAYLAND_SCANNER) client-header $< $@
@@ -939,6 +1018,18 @@ $(objects)/relative-pointer-unstable-v1-protocol.lo: $(gen)/relative-pointer-uns
 	@$(SHELL) $(auxdir)/mkinstalldirs $(objects)
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
+$(gen)/tablet-unstable-v2-client-protocol.h: $(srcdir)/wayland-protocols/tablet-unstable-v2.xml
+	@$(SHELL) $(auxdir)/mkinstalldirs $(gen)
+	$(RUN_CMD_GEN)$(WAYLAND_SCANNER) client-header $< $@
+
+$(gen)/tablet-unstable-v2-protocol.c: $(srcdir)/wayland-protocols/tablet-unstable-v2.xml
+	@$(SHELL) $(auxdir)/mkinstalldirs $(gen)
+	$(RUN_CMD_GEN)$(WAYLAND_SCANNER) $(WAYLAND_SCANNER_CODE_MODE) $< $@
+
+$(objects)/tablet-unstable-v2-protocol.lo: $(gen)/tablet-unstable-v2-protocol.c $(gen)/tablet-unstable-v2-client-protocol.h
+	@$(SHELL) $(auxdir)/mkinstalldirs $(objects)
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
 $(gen)/text-input-unstable-v3-client-protocol.h: $(srcdir)/wayland-protocols/text-input-unstable-v3.xml
 	@$(SHELL) $(auxdir)/mkinstalldirs $(gen)
 	$(RUN_CMD_GEN)$(WAYLAND_SCANNER) client-header $< $@
@@ -948,6 +1039,18 @@ $(gen)/text-input-unstable-v3-protocol.c: $(srcdir)/wayland-protocols/text-input
 	$(RUN_CMD_GEN)$(WAYLAND_SCANNER) $(WAYLAND_SCANNER_CODE_MODE) $< $@
 
 $(objects)/text-input-unstable-v3-protocol.lo: $(gen)/text-input-unstable-v3-protocol.c $(gen)/text-input-unstable-v3-client-protocol.h
+	@$(SHELL) $(auxdir)/mkinstalldirs $(objects)
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
+$(gen)/viewporter-client-protocol.h: $(srcdir)/wayland-protocols/viewporter.xml
+	@$(SHELL) $(auxdir)/mkinstalldirs $(gen)
+	$(RUN_CMD_GEN)$(WAYLAND_SCANNER) client-header $< $@
+
+$(gen)/viewporter-protocol.c: $(srcdir)/wayland-protocols/viewporter.xml
+	@$(SHELL) $(auxdir)/mkinstalldirs $(gen)
+	$(RUN_CMD_GEN)$(WAYLAND_SCANNER) $(WAYLAND_SCANNER_CODE_MODE) $< $@
+
+$(objects)/viewporter-protocol.lo: $(gen)/viewporter-protocol.c $(gen)/viewporter-client-protocol.h
 	@$(SHELL) $(auxdir)/mkinstalldirs $(objects)
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
@@ -987,6 +1090,18 @@ $(objects)/xdg-decoration-unstable-v1-protocol.lo: $(gen)/xdg-decoration-unstabl
 	@$(SHELL) $(auxdir)/mkinstalldirs $(objects)
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
+$(gen)/xdg-output-unstable-v1-client-protocol.h: $(srcdir)/wayland-protocols/xdg-output-unstable-v1.xml
+	@$(SHELL) $(auxdir)/mkinstalldirs $(gen)
+	$(RUN_CMD_GEN)$(WAYLAND_SCANNER) client-header $< $@
+
+$(gen)/xdg-output-unstable-v1-protocol.c: $(srcdir)/wayland-protocols/xdg-output-unstable-v1.xml
+	@$(SHELL) $(auxdir)/mkinstalldirs $(gen)
+	$(RUN_CMD_GEN)$(WAYLAND_SCANNER) $(WAYLAND_SCANNER_CODE_MODE) $< $@
+
+$(objects)/xdg-output-unstable-v1-protocol.lo: $(gen)/xdg-output-unstable-v1-protocol.c $(gen)/xdg-output-unstable-v1-client-protocol.h
+	@$(SHELL) $(auxdir)/mkinstalldirs $(objects)
+	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
+
 $(gen)/xdg-shell-client-protocol.h: $(srcdir)/wayland-protocols/xdg-shell.xml
 	@$(SHELL) $(auxdir)/mkinstalldirs $(gen)
 	$(RUN_CMD_GEN)$(WAYLAND_SCANNER) client-header $< $@
@@ -999,15 +1114,15 @@ $(objects)/xdg-shell-protocol.lo: $(gen)/xdg-shell-protocol.c $(gen)/xdg-shell-c
 	@$(SHELL) $(auxdir)/mkinstalldirs $(objects)
 	$(RUN_CMD_CC)$(LIBTOOL) --tag=CC --mode=compile $(CC) $(CFLAGS) $(EXTRA_CFLAGS) -MMD -MT $@ -c $< -o $@
 
-/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandclipboard.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
-/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylanddatamanager.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
-/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylanddyn.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
-/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandevents.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
-/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandkeyboard.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
-/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandmessagebox.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
-/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandmouse.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
-/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandopengles.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
-/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandtouch.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
-/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandvideo.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
-/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandvulkan.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
-/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandwindow.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
+/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandclipboard.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
+/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylanddatamanager.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
+/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylanddyn.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
+/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandevents.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
+/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandkeyboard.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
+/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandmessagebox.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
+/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandmouse.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
+/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandopengles.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
+/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandtouch.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
+/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandvideo.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
+/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandvulkan.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h
+/home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandwindow.c: $(gen)/idle-inhibit-unstable-v1-client-protocol.h $(gen)/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h $(gen)/pointer-constraints-unstable-v1-client-protocol.h $(gen)/primary-selection-unstable-v1-client-protocol.h $(gen)/relative-pointer-unstable-v1-client-protocol.h $(gen)/tablet-unstable-v2-client-protocol.h $(gen)/text-input-unstable-v3-client-protocol.h $(gen)/viewporter-client-protocol.h $(gen)/wayland-client-protocol.h $(gen)/xdg-activation-v1-client-protocol.h $(gen)/xdg-decoration-unstable-v1-client-protocol.h $(gen)/xdg-output-unstable-v1-client-protocol.h $(gen)/xdg-shell-client-protocol.h

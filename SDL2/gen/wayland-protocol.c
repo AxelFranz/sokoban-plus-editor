@@ -203,7 +203,7 @@ static const struct wl_message wl_compositor_requests[] = {
 };
 
 WL_PRIVATE const struct wl_interface wl_compositor_interface = {
-	"wl_compositor", 4,
+	"wl_compositor", 5,
 	2, wl_compositor_requests,
 	0, NULL,
 };
@@ -367,6 +367,7 @@ static const struct wl_message wl_surface_requests[] = {
 	{ "set_buffer_transform", "2i", wayland_types + 0 },
 	{ "set_buffer_scale", "3i", wayland_types + 0 },
 	{ "damage_buffer", "4iiii", wayland_types + 0 },
+	{ "offset", "5ii", wayland_types + 0 },
 };
 
 static const struct wl_message wl_surface_events[] = {
@@ -375,8 +376,8 @@ static const struct wl_message wl_surface_events[] = {
 };
 
 WL_PRIVATE const struct wl_interface wl_surface_interface = {
-	"wl_surface", 4,
-	10, wl_surface_requests,
+	"wl_surface", 5,
+	11, wl_surface_requests,
 	2, wl_surface_events,
 };
 
@@ -393,7 +394,7 @@ static const struct wl_message wl_seat_events[] = {
 };
 
 WL_PRIVATE const struct wl_interface wl_seat_interface = {
-	"wl_seat", 7,
+	"wl_seat", 8,
 	4, wl_seat_requests,
 	2, wl_seat_events,
 };
@@ -413,12 +414,13 @@ static const struct wl_message wl_pointer_events[] = {
 	{ "axis_source", "5u", wayland_types + 0 },
 	{ "axis_stop", "5uu", wayland_types + 0 },
 	{ "axis_discrete", "5ui", wayland_types + 0 },
+	{ "axis_value120", "8ui", wayland_types + 0 },
 };
 
 WL_PRIVATE const struct wl_interface wl_pointer_interface = {
-	"wl_pointer", 7,
+	"wl_pointer", 8,
 	2, wl_pointer_requests,
-	9, wl_pointer_events,
+	10, wl_pointer_events,
 };
 
 static const struct wl_message wl_keyboard_requests[] = {
@@ -435,7 +437,7 @@ static const struct wl_message wl_keyboard_events[] = {
 };
 
 WL_PRIVATE const struct wl_interface wl_keyboard_interface = {
-	"wl_keyboard", 7,
+	"wl_keyboard", 8,
 	1, wl_keyboard_requests,
 	6, wl_keyboard_events,
 };
@@ -455,7 +457,7 @@ static const struct wl_message wl_touch_events[] = {
 };
 
 WL_PRIVATE const struct wl_interface wl_touch_interface = {
-	"wl_touch", 7,
+	"wl_touch", 8,
 	1, wl_touch_requests,
 	7, wl_touch_events,
 };
@@ -469,12 +471,14 @@ static const struct wl_message wl_output_events[] = {
 	{ "mode", "uiii", wayland_types + 0 },
 	{ "done", "2", wayland_types + 0 },
 	{ "scale", "2i", wayland_types + 0 },
+	{ "name", "4s", wayland_types + 0 },
+	{ "description", "4s", wayland_types + 0 },
 };
 
 WL_PRIVATE const struct wl_interface wl_output_interface = {
-	"wl_output", 3,
+	"wl_output", 4,
 	1, wl_output_requests,
-	4, wl_output_events,
+	6, wl_output_events,
 };
 
 static const struct wl_message wl_region_requests[] = {

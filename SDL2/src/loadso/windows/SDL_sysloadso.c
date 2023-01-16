@@ -36,12 +36,12 @@ SDL_LoadObject(const char *sofile)
     LPTSTR tstr;
 
     if (!sofile) {
-        SDL_SetError("NULL sofile");
+        SDL_InvalidParamError("sofile");
         return NULL;
     }
     tstr = WIN_UTF8ToString(sofile);
 #ifdef __WINRT__
-    /* WinRT only publically supports LoadPackagedLibrary() for loading .dll
+    /* WinRT only publicly supports LoadPackagedLibrary() for loading .dll
        files.  LoadLibrary() is a private API, and not available for apps
        (that can be published to MS' Windows Store.)
     */

@@ -76,6 +76,7 @@
 #define HAVE_STRING_H 1
 #define HAVE_SYS_TYPES_H 1
 #define HAVE_WCHAR_H 1
+#define HAVE_LINUX_INPUT_H 1
 /* #undef HAVE_PTHREAD_NP_H */
 #define HAVE_LIBUNWIND_H 1
 
@@ -93,6 +94,7 @@
 #define HAVE_UNSETENV 1
 #endif
 #define HAVE_QSORT 1
+#define HAVE_BSEARCH 1
 #define HAVE_ABS 1
 #define HAVE_BCOPY 1
 #define HAVE_MEMSET 1
@@ -142,6 +144,7 @@
 #define HAVE_STRCASECMP 1
 /* #undef HAVE__STRNICMP */
 #define HAVE_STRNCASECMP 1
+#define HAVE_STRCASESTR 1
 /* #undef HAVE_SSCANF */
 #define HAVE_VSSCANF 1
 /* #undef HAVE_SNPRINTF */
@@ -227,8 +230,11 @@
 #define HAVE_IBUS_IBUS_H 1
 #define HAVE_IMMINTRIN_H 1
 #define HAVE_LIBUDEV_H 1
+/* #undef HAVE_LIBUSB */
 #define HAVE_LIBSAMPLERATE_H 1
 /* #undef HAVE_LIBDECOR_H */
+/* #undef HAVE_LSXINTRIN_H */
+/* #undef HAVE_LASXINTRIN_H */
 
 /* #undef HAVE_DDRAW_H */
 /* #undef HAVE_DINPUT_H */
@@ -243,6 +249,8 @@
 /* #undef HAVE_AUDIOCLIENT_H */
 /* #undef HAVE_TPCSHRD_H */
 /* #undef HAVE_SENSORSAPI_H */
+/* #undef HAVE_ROAPI_H */
+/* #undef HAVE_SHELLSCALINGAPI_H */
 
 /* SDL internal assertion support */
 /* #undef SDL_DEFAULT_ASSERT_LEVEL */
@@ -264,6 +272,8 @@
 /* #undef SDL_VIDEO_DISABLED */
 /* #undef SDL_POWER_DISABLED */
 /* #undef SDL_FILESYSTEM_DISABLED */
+/* #undef SDL_LOCALE_DISABLED */
+/* #undef SDL_MISC_DISABLED */
 
 /* Enable various audio drivers */
 /* #undef SDL_AUDIO_DRIVER_AAUDIO */
@@ -290,7 +300,6 @@
 /* #undef SDL_AUDIO_DRIVER_NETBSD */
 /* #undef SDL_AUDIO_DRIVER_OPENSLES */
 #define SDL_AUDIO_DRIVER_OSS 1
-/* #undef SDL_AUDIO_DRIVER_OSS_SOUNDCARD_H */
 /* #undef SDL_AUDIO_DRIVER_PAUDIO */
 #define SDL_AUDIO_DRIVER_PIPEWIRE 1
 #define SDL_AUDIO_DRIVER_PIPEWIRE_DYNAMIC "libpipewire-0.3.so.0"
@@ -381,26 +390,22 @@
 #define SDL_VIDEO_DRIVER_KMSDRM_DYNAMIC_GBM "libgbm.so.1"
 /* #undef SDL_VIDEO_DRIVER_ANDROID */
 /* #undef SDL_VIDEO_DRIVER_EMSCRIPTEN */
-/* #undef SDL_VIDEO_DRIVER_OFFSCREEN */
+#define SDL_VIDEO_DRIVER_OFFSCREEN 1
 #define SDL_VIDEO_DRIVER_X11_DYNAMIC "libX11.so.6"
 #define SDL_VIDEO_DRIVER_X11_DYNAMIC_XEXT "libXext.so.6"
 #define SDL_VIDEO_DRIVER_X11_DYNAMIC_XCURSOR "libXcursor.so.1"
-#define SDL_VIDEO_DRIVER_X11_DYNAMIC_XINERAMA "libXinerama.so.1"
 #define SDL_VIDEO_DRIVER_X11_DYNAMIC_XINPUT2 "libXi.so.6"
 #define SDL_VIDEO_DRIVER_X11_DYNAMIC_XFIXES "libXfixes.so.3"
 #define SDL_VIDEO_DRIVER_X11_DYNAMIC_XRANDR "libXrandr.so.2"
 #define SDL_VIDEO_DRIVER_X11_DYNAMIC_XSS "libXss.so.1"
-#define SDL_VIDEO_DRIVER_X11_DYNAMIC_XVIDMODE "libXxf86vm.so.1"
 #define SDL_VIDEO_DRIVER_X11_XCURSOR 1
 #define SDL_VIDEO_DRIVER_X11_XDBE 1
-#define SDL_VIDEO_DRIVER_X11_XINERAMA 1
 #define SDL_VIDEO_DRIVER_X11_XINPUT2 1
 #define SDL_VIDEO_DRIVER_X11_XINPUT2_SUPPORTS_MULTITOUCH 1
 #define SDL_VIDEO_DRIVER_X11_XFIXES 1
 #define SDL_VIDEO_DRIVER_X11_XRANDR 1
 #define SDL_VIDEO_DRIVER_X11_XSCRNSAVER 1
 #define SDL_VIDEO_DRIVER_X11_XSHAPE 1
-#define SDL_VIDEO_DRIVER_X11_XVIDMODE 1
 #define SDL_VIDEO_DRIVER_X11_SUPPORTS_GENERIC_EVENTS 1
 #define SDL_VIDEO_DRIVER_X11_HAS_XKBKEYCODETOKEYSYM 1
 /* #undef SDL_VIDEO_DRIVER_NACL */
@@ -412,6 +417,7 @@
 
 /* #undef SDL_VIDEO_RENDER_D3D */
 /* #undef SDL_VIDEO_RENDER_D3D11 */
+/* #undef SDL_VIDEO_RENDER_D3D12 */
 #define SDL_VIDEO_RENDER_OGL 1
 /* #undef SDL_VIDEO_RENDER_OGL_ES */
 #define SDL_VIDEO_RENDER_OGL_ES2 1
@@ -446,19 +452,27 @@
 /* #undef SDL_POWER_HARDWIRED */
 
 /* Enable system filesystem support */
+/* #undef SDL_FILESYSTEM_ANDROID */
 /* #undef SDL_FILESYSTEM_HAIKU */
 /* #undef SDL_FILESYSTEM_COCOA */
 /* #undef SDL_FILESYSTEM_DUMMY */
+/* #undef SDL_FILESYSTEM_RISCOS */
 #define SDL_FILESYSTEM_UNIX 1
 /* #undef SDL_FILESYSTEM_WINDOWS */
 /* #undef SDL_FILESYSTEM_NACL */
-/* #undef SDL_FILESYSTEM_ANDROID */
 /* #undef SDL_FILESYSTEM_EMSCRIPTEN */
 /* #undef SDL_FILESYSTEM_OS2 */
-/* #undef SDL_FILESYSTEM_RISCOS */
+/* #undef SDL_FILESYSTEM_VITA */
+/* #undef SDL_FILESYSTEM_PSP */
+/* #undef SDL_FILESYSTEM_PS2 */
+
+/* Enable misc subsystem */
+/* #undef SDL_MISC_DUMMY */
+
+/* Enable locale subsystem */
+/* #undef SDL_LOCALE_DUMMY */
 
 /* Enable assembly routines */
-#define SDL_ASSEMBLY_ROUTINES 1
 /* #undef SDL_ALTIVEC_BLITTERS */
 /* #undef SDL_ARM_SIMD_BLITTERS */
 /* #undef SDL_ARM_NEON_BLITTERS */

@@ -4,8 +4,8 @@ build/SDL_dbus.lo: \
  /home/axel/techdev-sokoban-franz/SDL2/src/core/linux/../../dynapi/SDL_dynapi.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/core/linux/../../dynapi/SDL_dynapi_overrides.h \
  include/SDL_config.h include/SDL_platform.h include/begin_code.h \
- include/close_code.h include/SDL_assert.h include/SDL_config.h \
- include/SDL_log.h include/SDL_stdinc.h include/SDL_hints.h \
+ include/close_code.h include/SDL_assert.h include/SDL_stdinc.h \
+ include/SDL_config.h include/SDL_log.h include/SDL_hints.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/core/linux/SDL_dbus.h \
  include/SDL_stdinc.h /usr/include/dbus-1.0/dbus/dbus.h \
  /usr/lib/dbus-1.0/include/dbus/dbus-arch-deps.h \
@@ -25,4 +25,6 @@ build/SDL_dbus.lo: \
  /usr/include/dbus-1.0/dbus/dbus-signature.h \
  /usr/include/dbus-1.0/dbus/dbus-syntax.h \
  /usr/include/dbus-1.0/dbus/dbus-threads.h include/SDL_atomic.h \
+ /home/axel/techdev-sokoban-franz/SDL2/src/core/linux/SDL_sandbox.h \
+ /home/axel/techdev-sokoban-franz/SDL2/src/core/linux/../../stdlib/SDL_vacopy.h \
  include/SDL_loadso.h include/SDL_error.h

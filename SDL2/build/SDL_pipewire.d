@@ -4,8 +4,8 @@ build/SDL_pipewire.lo: \
  /home/axel/techdev-sokoban-franz/SDL2/src/audio/pipewire/../../dynapi/SDL_dynapi.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/audio/pipewire/../../dynapi/SDL_dynapi_overrides.h \
  include/SDL_config.h include/SDL_platform.h include/begin_code.h \
- include/close_code.h include/SDL_assert.h include/SDL_config.h \
- include/SDL_log.h include/SDL_stdinc.h include/SDL_hints.h \
+ include/close_code.h include/SDL_assert.h include/SDL_stdinc.h \
+ include/SDL_config.h include/SDL_log.h include/SDL_hints.h \
  include/SDL_audio.h include/SDL_error.h include/SDL_endian.h \
  include/SDL_mutex.h include/SDL_thread.h include/SDL_atomic.h \
  include/SDL_rwops.h include/SDL_loadso.h \
@@ -76,4 +76,5 @@ build/SDL_pipewire.lo: \
  /usr/include/spa-0.2/spa/param/audio/raw.h \
  /usr/include/spa-0.2/spa/param/audio/iec958.h \
  /usr/include/spa-0.2/spa/param/audio/dsd.h \
- /usr/include/spa-0.2/spa/param/format-utils.h
+ /usr/include/spa-0.2/spa/param/format-utils.h \
+ /usr/include/spa-0.2/spa/utils/json.h

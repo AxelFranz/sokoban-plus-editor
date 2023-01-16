@@ -4,8 +4,8 @@ build/SDL_waylandwindow.lo: \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../dynapi/SDL_dynapi.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../dynapi/SDL_dynapi_overrides.h \
  include/SDL_config.h include/SDL_platform.h include/begin_code.h \
- include/close_code.h include/SDL_assert.h include/SDL_config.h \
- include/SDL_log.h include/SDL_stdinc.h \
+ include/close_code.h include/SDL_assert.h include/SDL_stdinc.h \
+ include/SDL_config.h include/SDL_log.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../SDL_sysvideo.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../SDL_internal.h \
  include/SDL_messagebox.h include/SDL_video.h include/SDL_pixels.h \
@@ -28,6 +28,8 @@ build/SDL_waylandwindow.lo: \
  include/SDL_vulkan.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../events/SDL_windowevents_c.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../events/../SDL_internal.h \
+ /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../events/SDL_mouse_c.h \
+ include/SDL_mouse.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../SDL_egl_c.h \
  include/SDL_egl.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../SDL_sysvideo.h \
@@ -68,7 +70,14 @@ build/SDL_waylandwindow.lo: \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylanddatamanager.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandkeyboard.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/SDL_waylandtouch.h \
- include/SDL_hints.h gen/xdg-shell-client-protocol.h \
+ include/SDL_hints.h \
+ /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../../SDL_hints_c.h \
+ /home/axel/techdev-sokoban-franz/SDL2/src/video/wayland/../.././SDL_internal.h \
+ include/SDL_events.h include/SDL_keyboard.h include/SDL_keycode.h \
+ include/SDL_scancode.h include/SDL_mouse.h include/SDL_joystick.h \
+ include/SDL_guid.h include/SDL_gamecontroller.h include/SDL_sensor.h \
+ include/SDL_quit.h include/SDL_gesture.h include/SDL_touch.h \
+ gen/xdg-shell-client-protocol.h \
  gen/xdg-decoration-unstable-v1-client-protocol.h \
  gen/idle-inhibit-unstable-v1-client-protocol.h \
- gen/xdg-activation-v1-client-protocol.h
+ gen/xdg-activation-v1-client-protocol.h gen/viewporter-client-protocol.h

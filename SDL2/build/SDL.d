@@ -3,8 +3,8 @@ build/SDL.lo: /home/axel/techdev-sokoban-franz/SDL2/src/SDL.c \
  /home/axel/techdev-sokoban-franz/SDL2/src/./dynapi/SDL_dynapi.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/./dynapi/SDL_dynapi_overrides.h \
  include/SDL_config.h include/SDL_platform.h include/begin_code.h \
- include/close_code.h include/SDL_assert.h include/SDL_config.h \
- include/SDL_log.h include/SDL_stdinc.h \
+ include/close_code.h include/SDL_assert.h include/SDL_stdinc.h \
+ include/SDL_config.h include/SDL_log.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/core/linux/SDL_dbus.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/core/linux/../../SDL_internal.h \
  include/SDL_stdinc.h /usr/include/dbus-1.0/dbus/dbus.h \
@@ -32,15 +32,17 @@ build/SDL.lo: /home/axel/techdev-sokoban-franz/SDL2/src/SDL.c \
  include/SDL_video.h include/SDL_pixels.h include/SDL_rect.h \
  include/SDL_surface.h include/SDL_blendmode.h include/SDL_keyboard.h \
  include/SDL_keycode.h include/SDL_scancode.h include/SDL_mouse.h \
- include/SDL_joystick.h include/SDL_gamecontroller.h include/SDL_sensor.h \
- include/SDL_quit.h include/SDL_gesture.h include/SDL_touch.h \
- include/SDL_filesystem.h include/SDL_haptic.h include/SDL_hidapi.h \
- include/SDL_hints.h include/SDL_loadso.h include/SDL_log.h \
- include/SDL_messagebox.h include/SDL_metal.h include/SDL_power.h \
- include/SDL_render.h include/SDL_shape.h include/SDL_system.h \
- include/SDL_timer.h include/SDL_version.h include/SDL_locale.h \
- include/SDL_misc.h include/SDL_bits.h include/SDL_revision.h \
+ include/SDL_joystick.h include/SDL_guid.h include/SDL_gamecontroller.h \
+ include/SDL_sensor.h include/SDL_quit.h include/SDL_gesture.h \
+ include/SDL_touch.h include/SDL_filesystem.h include/SDL_haptic.h \
+ include/SDL_hidapi.h include/SDL_hints.h include/SDL_loadso.h \
+ include/SDL_log.h include/SDL_messagebox.h include/SDL_metal.h \
+ include/SDL_power.h include/SDL_render.h include/SDL_shape.h \
+ include/SDL_system.h include/SDL_timer.h include/SDL_version.h \
+ include/SDL_locale.h include/SDL_misc.h include/SDL_bits.h \
+ include/SDL_revision.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/SDL_assert_c.h \
+ /home/axel/techdev-sokoban-franz/SDL2/src/SDL_log_c.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/events/SDL_events_c.h \
  /home/axel/techdev-sokoban-franz/SDL2/src/events/../SDL_internal.h \
  include/SDL_events.h include/SDL_thread.h \
