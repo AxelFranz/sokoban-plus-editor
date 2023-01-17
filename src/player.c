@@ -27,6 +27,8 @@ enum Event event(){
             return Right;
         case 'q':
             return Quit;
+        case 'r':
+            return Retry;
         default:
             return None;
     }

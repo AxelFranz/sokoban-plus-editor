@@ -82,7 +82,7 @@ void listFolder(const char* dirname,char** names, int* size_names){
     closedir(d);
 }
 
-void printFolder(const char* dirname){
+char** printFolder(const char* dirname){
     char** names = malloc(256*sizeof(char*));
     if(!names){
         fprintf(stderr,"Malloc error : PrintFolder\n");
@@ -100,8 +100,5 @@ void printFolder(const char* dirname){
     for(int i = 0; i < size_names;i++){
         fprintf(stdout,"%d : %s\n",i,names[i]);
     }
-    for(int i = 0; i < size_names; i++){
-        free(names[i]);
-    }
-    free(names);
+    return names;
 }

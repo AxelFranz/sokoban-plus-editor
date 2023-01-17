@@ -172,6 +172,8 @@ enum Event event_sdl2(){
                 return Right;
             case SDLK_q:
                 return Quit;
+            case SDLK_r:
+                return Retry;
             default:
                 return None;
             

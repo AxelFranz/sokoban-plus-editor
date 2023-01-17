@@ -7,6 +7,6 @@ void fprintString(const char* file_name, const char* printed);
 
 void createGridFile(const char* file_name, struct Grid g);
 
-void printFolder(const char* dirname);
+char** printFolder(const char* dirname);
 
 #endif

@@ -37,6 +37,7 @@ enum Event{
     None, ///< Ne rien faire
     Click, //< Clic souris
     Save, //< sauvegarde de la grille
+    Retry, ///< Retry du niveau
 };
 
 
