@@ -24,6 +24,8 @@ int main(int argc, char** argv){
     bool isGame = isSDL || isConsole;
     enum Event(*handle_event)();
     void (*handle_display)(Grid*);
+    printFolder("levels/");
+    getchar();
     Grid a;
 
     // On check les arguments
