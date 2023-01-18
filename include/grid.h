@@ -104,8 +104,17 @@ void setCell(Grid* a,int i ,int j, char val);
  */
 void setPosCell(Grid* g, Position pos, char val);
 
+/**
+ * @brief Retourne le nombre d'objectifs d'un niveau
+ * @param g La grille a tester
+ * @return Le nombre d'objectifs
+ */
 int getGoalNumber(Grid g);
 
+/**
+ * @brief Permet d'initialiser une grille. La fonction demande le nombre de lignes et de colonnes. Les contours de la grille sont des murs et le reste est du vide
+ * @return La grille initialisée
+ */
 Grid initNewGrid();
 
 #endif

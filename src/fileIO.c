@@ -1,3 +1,9 @@
+/**
+ * @file fileIO.c
+ * Fichier contenant les fonctions définies dans fileIO.h
+ * @author Axel FRANZ
+ */
+
 #include "player.h"
 #include "grid.h"
 #include "fileIO.h"
@@ -5,26 +11,6 @@
 #include <dirent.h>
 #include <stdlib.h>
 #include <string.h>
-void fprintString(const char* file_name, const char* printed){
-    FILE* fp = fopen(file_name,"w");
-    if(fp == NULL){
-        fprintf(stderr,"fprintString : Cannot open file %s\n",file_name);
-        exit(1);
-    }
-    fprintf(fp,printed);
-    fclose(fp);
-}
-
-
-void fappendString(const char* file_name, const char* printed){
-    FILE* fp = fopen(file_name,"a");
-    if(fp == NULL){
-        fprintf(stderr,"fappendString : Cannot open file %s\n",file_name);
-        exit(1);
-    }
-    fprintf(fp,printed);
-    fclose(fp);
-}
 
 void fputChar(const char* file_name, const char c){
     FILE* fp = fopen(file_name,"w");
@@ -46,6 +32,28 @@ void fappendChar(const char* file_name, const char c){
     fclose(fp);
 
 }
+
+void fprintString(const char* file_name, const char* printed){
+    FILE* fp = fopen(file_name,"w");
+    if(fp == NULL){
+        fprintf(stderr,"fprintString : Cannot open file %s\n",file_name);
+        exit(1);
+    }
+    fprintf(fp,printed);
+    fclose(fp);
+}
+
+
+void fappendString(const char* file_name, const char* printed){
+    FILE* fp = fopen(file_name,"a");
+    if(fp == NULL){
+        fprintf(stderr,"fappendString : Cannot open file %s\n",file_name);
+        exit(1);
+    }
+    fprintf(fp,printed);
+    fclose(fp);
+}
+
 
 void createGridFile(const char* file_name, Grid g){
     char new_path[256];

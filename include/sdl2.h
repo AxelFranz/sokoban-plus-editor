@@ -89,8 +89,20 @@ void display_sdl2(struct Grid* g);
  */
 enum Event event_sdl2();
 
+/**
+ * @brief Permet de changer la case cliquée (en mode éditeur)
+ * @param a Pointeur vers la grille à modifier
+ */
 void changeCase(struct Grid* a);
 
+/**
+ * @brief Handler d'évènements en mode editeur (sauvegarder/changer la case)
+ * @return L'event en input
+ */
 enum Event event_editor();
 
+/**
+ * @brief Permet d'afficher la grille en mode editeur (changement mineur par rapport au SDL2 normal)
+ * @param g Pointeur vers la grille à afficher
+ */
 void display_editor(struct Grid* g);

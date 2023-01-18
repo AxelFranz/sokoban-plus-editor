@@ -185,7 +185,9 @@ enum Event event_sdl2(){
     }
 }
 
+/// Liste contenant tous les types présents dans une grille
 char items[] = {NONE,WALL,BOX,PLAYER,GOAL};
+
 void changeCase(Grid* a){
     int x,y;
     SDL_GetMouseState(&x,&y);
