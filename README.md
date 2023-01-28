@@ -1,11 +1,7 @@
 # Sokoban
-Vous trouverez ici les fichiers du TP noté concernant le jeu du Sokoban par [**Axel FRANZ**](https://git.unistra.fr/a.franz).
+Vous trouverez ici les fichiers du TP noté concernant le jeu du Sokoban par [**Axel FRANZ**](https://github.com/AxelFranz).
 
-Si jamais vous téléchargez l'archive depuis moodle. Il faut mettre le dossier SDL2/ à la racine du projet. (Pas besoin de rajouter sdl2.h et sdl2.c, ils sont déjà là)
-
-[Le code souce peut être trouvé ici](https://git.unistra.fr/a.franz/techdev-sokoban-franz)
-
-Les consignes et l'énoncé se trouve à cette adresse : [TP Sokoban](https://techdevprintemps2022.pages.unistra.fr/TP_TechDevEnonce/)
+Les consignes et l'énoncé du travail de base (sans l'éditeur se trouve à cette adresse : [TP Sokoban](https://techdevprintemps2022.pages.unistra.fr/TP_TechDevEnonce/)
 
 ```
 Liste des règles makefile :
@@ -16,7 +12,7 @@ Liste des règles makefile :
 	* clean : Permet de supprimer tous les fichiers indésirables
     * all : Compile tout ce qui n'existe pas (doc + SDL + executable)
 ```
-Les fuites de mémoires présentes dans la version graphique viennent de SDL2 et non pas de mon programme. On peut voir qu'il n'y aucune fuite de mon côté en testant la version console.
+<br>
 ```
 Options de lancement :
     * --sdl2 : Pour jouer en mode graphique
