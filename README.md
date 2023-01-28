@@ -7,10 +7,9 @@ Les consignes et l'énoncé du travail de base (sans l'éditeur se trouve à cet
 Liste des règles makefile :
     * compilSDL : Permet de compiler et installer SDL2
 	* main : Permet de compiler le main
-	* archive : Permet de créer l'archive à rendre
 	* doc : Permet de compiler la documentation qui sera dans doc/
 	* clean : Permet de supprimer tous les fichiers indésirables
-    * all : Compile tout ce qui n'existe pas (doc + SDL + executable)
+    * all : Compile tout ce qui n'existe pas (doc + executable)
 
 Options de lancement :
     * --sdl2 : Pour jouer en mode graphique
