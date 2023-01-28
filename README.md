@@ -11,9 +11,7 @@ Liste des règles makefile :
 	* doc : Permet de compiler la documentation qui sera dans doc/
 	* clean : Permet de supprimer tous les fichiers indésirables
     * all : Compile tout ce qui n'existe pas (doc + SDL + executable)
-```
-<br>
-```
+
 Options de lancement :
     * --sdl2 : Pour jouer en mode graphique
     * --console : Pour jouer en mode console
